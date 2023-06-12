@@ -116,5 +116,34 @@ switch (Page) {
         break;
 
     case "servicesBD":
+            /*===========================EVENTLISTENERS=============================*/
+    navbar_menu.addEventListener("click", navbarMenuClick);
+    navbar_search_I.addEventListener("click", NavsearchbaruClick);
+    window.addEventListener("scroll", scrollFunc);
+    categoryBox.addEventListener("click", categoryClick);
+
         break;
+}
+
+
+/*============================Functions for "servicesBD" ======*/
+
+function categoryClick() {
+  allCategoriesContainer.classList.toggle("display");
+  document.querySelector(".arrow").classList.toggle("rotate");
+  allCategoriesContainerHeight();
+}
+function allCategoriesContainerHeight() {
+  let containerHeight = 0;
+  for (i = 0; i < categoryInputContainer.length; i++) {
+    containerHeight += categoryInputContainer[i].offsetHeight;
+  }
+
+  if (containerHeight > 300) {
+    console.log(containerHeight);
+    allCategoriesContainer.classList.remove("overflowScrollBar");
+  } else {
+    console.log(containerHeight);
+    allCategoriesContainer.classList.add("overflowScrollBar");
+  }
 }
