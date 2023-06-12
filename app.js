@@ -16,6 +16,9 @@ const closed_dropdown_bar_h1 = document.querySelectorAll(
 const coursesNav_boxULLI = document.querySelectorAll(".coursesNav_box ul li");
 const courses_cards = document.querySelectorAll(".courses_image_box");
 const counters = document.querySelectorAll(".counter");
+const categoryBox = document.querySelector(".category-box");
+const categoryInputContainer = document.querySelectorAll(".category-input");
+const allCategoriesContainer = document.querySelector(".categories-all");
 
 /*===========================FUNCTIONS-indexDB=============================*/
 function scrollFunc() {
