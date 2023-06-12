@@ -1,122 +1,265 @@
 <!DOCTYPE html>
-<html lang="geo">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>სოცილური სერვისები</title>
-
-    <!-- css file and icon-->
-    <link rel="icon" href="./img/Social Services Logo (middle).png" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"
-      rel="stylesheet"
-    />
-    <!-- georgian Fonts -->
-    <link
-      rel="stylesheet"
-      href="./GeorgianFontsHere/bpg-nateli-master/css/bpg-nateli.min.css"
-    />
-    <!--  -->
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="swiper-bundle.min.css" />
-  </head>
-  <body>
-    <!--===========================navbar=============================-->
-    <section class="navbar_container">
-      <nav>
-        <div class="navbar_box1" onclick="location.href='index.html'">
-          <img src="img/Social Services Logo (middle).png" alt="" />
-          <h1>სოციალური სერვისები</h1>
-        </div>
-        <div class="navbar_box2">
-          <ul>
-            <li>
-              <a href="index.html">მთავარი</a>
-            </li>
-            <li>
-              <a href="services.html">სერვისები</a>
-            </li>
-            <li>
-              <a href="#">ჩვენ შესახებ</a>
-            </li>
-            <li>
-              <a href="#">კონტაქტები</a>
-            </li>
-            <li>
-              <div class="navbar_search_box">
-                <input
-                  class="navbarsearch_input"
-                  type="text"
-                  placeholder="ძებნა..."
-                />
-                <i class="fa fa-search"></i>
-              </div>
-            </li>
-            <div class="navbar_menu">
-              <span class="line1"></span>
-              <span class="line2"></span>
-              <span class="line3"></span>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="swiper-bundle.min.css" />
+        <link rel="stylesheet" href="swiper-bundle.min.css" />
+        <link rel="icon" href="img/Social Services Logo (middle).png" />
+        <link
+            rel="stylesheet"
+            href="bpg-nateli-master/css/bpg-nateli.min.css"
+        />
+        <script src="app.js" defer></script>
+        <script src="swiper-bundle.min.js"></script>
+    </head>
+    <body id="indexBD">
+        <!--===========================navbar=============================-->
+        <section class="navbar_container">
+            <nav>
+                <div class="navbar_box1">
+                    <img
+                        src="img/Social Services Logo (middle).png"
+                        alt=""
+                        onclick="location.href='index.html'"
+                    />
+                    <h1>სოციალური სერვისები</h1>
+                </div>
+                <div class="navbar_box2">
+                    <ul>
+                        <li>
+                            <a href="#">მთავარი</a>
+                        </li>
+                        <li>
+                            <a href="services.html">სერვისები</a>
+                        </li>
+                        <li>
+                            <a href="#">ჩვენ შესახებ</a>
+                        </li>
+                        <li>
+                            <a href="#">კონტაქტები</a>
+                        </li>
+                        <li>
+                            <div class="navbar_search_box">
+                                <input
+                                    class="navbarsearch_input"
+                                    type="text"
+                                    placeholder="ძებნა..."
+                                />
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </li>
+                        <div class="navbar_menu">
+                            <span class="line1"></span>
+                            <span class="line2"></span>
+                            <span class="line3"></span>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+            <div class="responsive_navbar_box">
+                <ul>
+                    <li>
+                        <a href="#">მთავარი</a>
+                    </li>
+                    <li>
+                        <a href="#">სერვისები</a>
+                    </li>
+                    <li>
+                        <a href="#">ჩვენ შესახებ</a>
+                    </li>
+                    <li>
+                        <a href="#">კონტაქტები</a>
+                    </li>
+                </ul>
             </div>
-          </ul>
-        </div>
-      </nav>
-      <div class="responsive_navbar_box">
-        <ul>
-          <li>
-            <a href="index.html">მთავარი</a>
-          </li>
-          <li>
-            <a href="services.html">სერვისები</a>
-          </li>
-          <li>
-            <a href="#">ჩვენ შესახებ</a>
-          </li>
-          <li>
-            <a href="#">კონტაქტები</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!--===========================slider=============================-->
-    <br />
-    <div class="banner_content swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="banner_items" id="sld_1">
-            <h3>OUR COURSES</h3>
-            <h1>With Scholar Teachers, Everything Is Easier</h1>
-            <div class="text_box">
-              <p>
-                Scholar is free CSS template designed by TemplateMo for online
-                educational related websites. This layout is based on the famous
-                Bootstrap v5.3.0 framework
-              </p>
+        </section>
+        <!--===========================slider=============================-->
+        <br />
+        <div class="banner_content swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="banner_items" id="sld_1">
+                        <h1>დაეხმარე ახალგაზრდებს</h1>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="banner_items" id="sld_2">
+                        <h1>შეასრულე შენი მიზანი</h1>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="banner_items" id="sld_3">
+                        <h1>გაიგე უფრო მეტი შენს შესახებ</h1>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="swiper-slide">
-          <div class="banner_items" id="sld_2">
-            <h3>BEST RESULT</h3>
-            <h1>Get the best result out of your effort</h1>
-            <div class="text_box">
-              <p>
-                You are allowed to use this template for any educational or
-                commercial purpose. You are not allowed to re-distribute the
-                template ZIP file on any other website.
-              </p>
+        <!--===========================about=============================-->
+        <section class="about_container">
+            <div class="about_box">
+                <h1>ჩვენ შესახებ</h1>
+                <div class="about_paragraph">
+                    <p>
+                        სატრანსპორტო საშუალების რეგისტრაციის შედეგად სსიპ
+                        საქართველოს შინაგან საქმეთა სამინისტროს მომსახურების
+                        სააგენტოს (შემდგომში - სააგენტო) მონაცემთა ელექტრონულ
+                        ბაზაში დაინტერესებულ პირთა მობილური ტელეფონის ნომრის
+                        ასახვის, შეცვლის, წაშლისა და დაბლოკვის პროცედურები:
+                        სატრანსპორტო საშუალების რეგისტრაციის შედეგად სააგენტოს
+                        მონაცემთა ბაზაში აისახება დაინტერესებული პირის
+                        (მესაკუთრის, მოსარგებლის, დეკლარანტის, შეზღუდული
+                        ქმედუნარიანი პირის კანონიერი
+                        წარმომადგენლის/მხარდამჭერის, იურიდიული პირის
+                        წარმომადგენლის ან სხვა უფლებამოსილი პირის) მობილური
+                        ტელეფონის ნომერი. მობილური ტელეფონის ნომრის
+                        სააგენტოსათვის გამჟღავნება ნებაყოფლობითია და ხორციელდება
+                        ზეპირი ან წერილობითი ფორმით. მონაცემთა ბაზაში ასახული
+                        მობილური ტელეფონის ნომერი სააგენტოს მიერ შესაძლებელია
+                        გამოყენებულ იქნას
+                        <itaque class=""></itaque>
+                    </p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--===========================slider=============================-->
-    <script src="app.js" defer></script>
-    <script src="swiper-bundle.min.js"></script>
-  </body>
+        </section>
+        <!--===========================statistic=============================-->
+        <section class="static_container">
+            <div class="static_box">
+                <div class="static_row_box">
+                    <h2 class="counter" data-target="1023">0</h2>
+                    <p>ჯანდაცვა</p>
+                </div>
+                <div class="static_row_box">
+                    <h2 class="counter" data-target="2446">0</h2>
+                    <p>ჯანდაცვა</p>
+                </div>
+                <div class="static_row_box">
+                    <h2 class="counter" data-target="6798">0</h2>
+                    <p>ჯანდაცვა</p>
+                </div>
+                <div class="static_row_box">
+                    <h2 class="counter" data-target="5011">0</h2>
+                    <p>ჯანდაცვა</p>
+                </div>
+            </div>
+        </section>
+        <!--===========================news=============================-->
+        <section class="news_container">
+            <div class="news_content">
+                <h1>ახალი ამბები</h1>
+                <div class="news_cards">
+                    <div class="news_boxes">
+                        <div class="news_box_inside">
+                            <div class="news_box_img">
+                                <img src="img/news_img1.jpg " alt="#" />
+                            </div>
+                            <div class="news_box_info">
+                                <h2>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა
+                                </h2>
+                                <p>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა. #31მაისიპოლიციელის დღეა
+                                    #ვემსახურები საქართველოს
+                                </p>
+                                <div class="news_info_time">
+                                    <p>31.05.2023</p>
+                                    <a href="#"
+                                        >დაწვრილებით
+                                        <i class="fa fa-angle-right"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_boxes">
+                        <div class="news_box_inside">
+                            <div class="news_box_img">
+                                <img src="img/news_img2.jpg" alt="#" />
+                            </div>
+                            <div class="news_box_info">
+                                <h2>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა
+                                </h2>
+                                <p>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა. #31მაისიპოლიციელის დღეა
+                                    #ვემსახურები საქართველოს
+                                </p>
+                                <div class="news_info_time">
+                                    <p>31.05.2023</p>
+                                    <a href="#"
+                                        >დაწვრილებით
+                                        <i class="fa fa-angle-right"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_boxes">
+                        <div class="news_box_inside">
+                            <div class="news_box_img">
+                                <img src="img/news_img3.jpg " alt="#" />
+                            </div>
+                            <div class="news_box_info">
+                                <h2>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა
+                                </h2>
+                                <p>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა. #31მაისიპოლიციელის დღეა
+                                    #ვემსახურები საქართველოს
+                                </p>
+                                <div class="news_info_time">
+                                    <p>31.05.2023</p>
+                                    <a href="#"
+                                        >დაწვრილებით
+                                        <i class="fa fa-angle-right"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_boxes">
+                        <div class="news_box_inside">
+                            <div class="news_box_img">
+                                <img src="img/news_img2.jpg" alt="" />
+                            </div>
+                            <div class="news_box_info">
+                                <h2>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა
+                                </h2>
+                                <p>
+                                    შინაგან საქმეთა სამინისტრომ პოლიციელის დღე
+                                    აღნიშნა. #31მაისიპოლიციელის დღეა
+                                    #ვემსახურები საქართველოს
+                                </p>
+                                <div class="news_info_time">
+                                    <p>31.05.2023</p>
+                                    <a href="#"
+                                        >დაწვრილებით
+                                        <i class="fa fa-angle-right"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
