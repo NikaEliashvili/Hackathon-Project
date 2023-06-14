@@ -40,6 +40,10 @@ const categories = document.getElementById("categories");
 const locations = document.getElementById("locations");
 const mainContainerEl = document.querySelector(".main-container");
 
+let startIndex = 0;
+let endIndex = 30;
+/*=====================  import data.js  ===========================*/
+import data from "./data.js";
 
 /*===========================FUNCTIONS-indexDB=============================*/
 function scrollFunc() {
