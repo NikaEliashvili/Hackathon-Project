@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>სოციალური სერვისები</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -13,6 +13,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <link rel="stylesheet" href="swiper-bundle.min.css" />
     <link rel="stylesheet" href="swiper-bundle.min.css" />
     <link rel="icon" href="img/Social Services Logo (middle).png" />
@@ -77,27 +82,50 @@
         </ul>
       </div>
     </section>
-    <!--===========================slider=============================-->
-    <br />
-    <div class="banner_content swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="banner_items" id="sld_1">
-            <h1>დაეხმარე ახალგაზრდებს</h1>
+    <!--===========================online-contact=============================-->
+    <div class="contact_corner_box">
+      <div class="contact_corner_content active">
+        <div class="contact_header">
+          <div class="contact_header_title_box">
+            <h3>contact us</h3>
+            <div>
+              <i class="fa fa-circle"></i>
+              <p>online</p>
+            </div>
+          </div>
+          <i class="fa fa-remove message_box_remove_btn"></i>
+        </div>
+        <div class="contact_chat_box">
+          <div class="message_box">
+            <!-- 
+            <h3>22:13</h3>
+            <div>
+              <p>hello my name is zzz</p>
+            </div>
+             -->
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="banner_items" id="sld_2">
-            <h1>შეასრულე შენი მიზანი</h1>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="banner_items" id="sld_3">
-            <h1>გაიგე უფრო მეტი შენს შესახებ</h1>
-          </div>
+        <div class="contact_input_box">
+          <input type="text" placeholder="type something" />
+          <i class="fa fa-paper-plane send_msg_btn"></i>
         </div>
       </div>
+      <i class="fa fa-message chat_open_btn"></i>
     </div>
+    <!--===========================slider=============================-->
+    <section class="banner_content swiper mySwiper">
+      <div class="mySlides fade">
+        <img src="img/automainslider_img1.jpg" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="img/automainslider_img2.jpg" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="img/automainslider_img3.jpg" />
+      </div>
+    </section>
     <!--===========================about=============================-->
     <section class="about_container">
       <div class="about_box">
@@ -126,26 +154,26 @@
       <div class="static_box">
         <div class="static_row">
           <div class="static_row_box">
-            <h2 class="counter" data-target="1023">0</h2>
-            <p>ჯანდაცვა</p>
+            <h2 class="counter" data-target="18774">0</h2>
+            <p>შემოსავლები</p>
           </div>
         </div>
         <div class="static_row">
           <div class="static_row_box">
-            <h2 class="counter" data-target="2446">0</h2>
-            <p>ჯანდაცვა</p>
+            <h2 class="counter" data-target="342">0</h2>
+            <p>გრანტები</p>
           </div>
         </div>
         <div class="static_row">
           <div class="static_row_box">
-            <h2 class="counter" data-target="6798">0</h2>
-            <p>ჯანდაცვა</p>
+            <h2 class="counter" data-target="17641">0</h2>
+            <p>გადასახადები</p>
           </div>
         </div>
         <div class="static_row">
           <div class="static_row_box">
-            <h2 class="counter" data-target="5011">0</h2>
-            <p>ჯანდაცვა</p>
+            <h2 class="counter" data-target="644">0</h2>
+            <p>სოც უზრუნველყოფა</p>
           </div>
         </div>
       </div>
@@ -161,10 +189,13 @@
                 <img src="img/news_img1.jpg " alt="#" />
               </div>
               <div class="news_box_info">
-                <h2>შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა</h2>
+                <h2>სტუდენტების დაფინანსების პროგრამა განხილვის პროცესშია</h2>
                 <p>
-                  შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა.
-                  #31მაისიპოლიციელის დღეა #ვემსახურები საქართველოს
+                  დახმარებას მიიღებენ: ქარელის მუნიციპალიტეტში რეგისტრირებული
+                  მარჩენალდაკარგული სტუდენტები, პირველი ჯგუფის შეზღუდული
+                  შესაძლებლობის მქონე სტუდენტები, პირველი ჯგუფის შშმ პირთა
+                  სტუდენტი შვილები, მარტოხელა სტატუსის მქონე მშობლის სტუდენტი
+                  შვილები...
                 </p>
                 <div class="news_info_time">
                   <p>31.05.2023</p>
@@ -179,10 +210,11 @@
                 <img src="img/news_img2.jpg" alt="#" />
               </div>
               <div class="news_box_info">
-                <h2>შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა</h2>
+                <h2>დედ-მამით ობოლი 18 წლამდე ასაკის ბავშვების დახმარება</h2>
                 <p>
-                  შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა.
-                  #31მაისიპოლიციელის დღეა #ვემსახურები საქართველოს
+                  პროგრამა ითვალისწინებს აღნიშნული კატეგორიის სტუდენტებზე
+                  წლიურად სწავლის გადასახადის ერთჯერადად დაფინანსებას 500 ლარის
+                  ოდენობით
                 </p>
                 <div class="news_info_time">
                   <p>31.05.2023</p>
@@ -197,10 +229,10 @@
                 <img src="img/news_img3.jpg " alt="#" />
               </div>
               <div class="news_box_info">
-                <h2>შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა</h2>
+                <h2>მაღალი აკადემიური მოსწრების სტუდენტები</h2>
                 <p>
-                  შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა.
-                  #31მაისიპოლიციელის დღეა #ვემსახურები საქართველოს
+                  მაღალი აკადემიური მოსწრების სტუდენტების ერთჯერადი მატერიალური
+                  წახალისება - 1000 ლარის ოდენობით.
                 </p>
                 <div class="news_info_time">
                   <p>31.05.2023</p>
@@ -212,13 +244,15 @@
           <div class="news_boxes">
             <div class="news_box_inside">
               <div class="news_box_img">
-                <img src="img/news_img2.jpg" alt="" />
+                <img src="img/news_img4.jpg" alt="" />
               </div>
               <div class="news_box_info">
-                <h2>შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა</h2>
+                <h2>ახალგაზრდულ ღონისძიებათა პროგრამა</h2>
                 <p>
-                  შინაგან საქმეთა სამინისტრომ პოლიციელის დღე აღნიშნა.
-                  #31მაისიპოლიციელის დღეა #ვემსახურები საქართველოს
+                  პროგრამის მიზანი: ახალგაზრდულ ღონისძიებათა ორგანიზება,
+                  ახალგაზრდობის მოსწავლეების განთლების ხელშეწყობა; მხარდაჭერილია
+                  ახალგაზრდული ინიციატივები და უზრუნველყოფილია ახალგაზრდების
+                  ჩართულობა საზოგადოებრივ ცხოვრებაში.
                 </p>
                 <div class="news_info_time">
                   <p>31.05.2023</p>
@@ -353,6 +387,45 @@
         </div>
       </div>
     </section>
-    <script src="app.js" type="module"></script>
+    <!--===========================footer=============================-->
+    <section class="footer_container">
+      <div class="footer_content">
+        <div class="footer_top_row">
+          <ul>
+            <li>
+              <img src="img/Social Services Logo (middle).png" alt="#" />
+              <h3>სოციალური სერვისები</h3>
+            </li>
+            <li>
+              <a href="#">WEEBLY THEMES</a>
+              <a href="#">PRE-SALE FAQS</a>
+              <a href="#">SUBMIT A TICKET</a>
+            </li>
+            <li>
+              <a href="#">SERVICES</a>
+              <a href="#">THEME TWEAK</a>
+            </li>
+            <li>
+              <a href="#">SHOWCASE</a>
+              <a href="#">WIDGETKIT</a>
+              <a href="#">SUPPORT</a>
+            </li>
+            <li>
+              <a href="#">ABOUT US</a>
+              <a href="#">CONTACT US</a>
+              <a href="#">AFFILIATES</a>
+              <a href="#">RESOURCES</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer_bottom_row">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-linkedin"></i>
+        </div>
+      </div>
+    </section>
+    <script src="app.js" defer type="module"></script>
   </body>
 </html>
