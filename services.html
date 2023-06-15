@@ -1,388 +1,462 @@
 <!DOCTYPE html>
 <html lang="ka">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>სოციალური სერვისები</title>
-<link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22/%3E />
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-                                                                                
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>სოციალური სერვისები</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22/%3E/"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
 
-<link rel="stylesheet" href="swiper-bundle.min.css" />
-<link rel="stylesheet" href="swiper-bundle.min.css" />
-<link rel="icon" href="img/Social Services Logo (middle).png" />
-<link rel="stylesheet" href="bpg-nateli-master/css/bpg-nateli.min.css" />
-  </head>
-  <body id="servicesBD">
-   <section class="navbar_container">
-      <nav>
-        <div class="navbar_box1" onclick="location.href='index.html'">
-          <img
-            src="img/Social Services Logo (middle).png"
-            alt=""
-          />
-          <h1>სოციალური სერვისები</h1>
-        </div>
-        <div class="navbar_box2">
-          <ul>
-            <li>
-              <a href="index.html">მთავარი</a>
-            </li>
-            <li>
-              <a href="services.html">სერვისები</a>
-            </li>
-            <li>
-              <a href="#">ჩვენ შესახებ</a>
-            </li>
-            <li>
-              <a href="contact.html">კონტაქტები</a>
-            </li>
-            <li>
-              <div class="navbar_search_box">
-                <input
-                  class="navbarsearch_input"
-                  type="text"
-                  placeholder="ძებნა..."
-                />
-                <i class="fa fa-search"></i>
-              </div>
-            </li>
-            <div class="navbar_menu">
-              <span class="line1"></span>
-              <span class="line2"></span>
-              <span class="line3"></span>
-            </div>
-          </ul>
-        </div>
-      </nav>
-      <div class="responsive_navbar_box">
-        <ul>
-          <li onclick="location.href='index.html'">
-            <a href="index.html">მთავარი</a>
-          </li>
-          <li onclick="location.href='services.html'">
-            <a href="services.html">სერვისები</a>
-          </li>
-          <li>
-            <a href="#">ჩვენ შესახებ</a>
-          </li>
-          <li>
-            <a href="contact.html">კონტაქტები</a>
-          </li>
-        </ul>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <link rel="stylesheet" href="swiper-bundle.min.css" />
+        <link rel="stylesheet" href="swiper-bundle.min.css" />
+        <link rel="icon" href="img/Social Services Logo (middle).png" />
+        <link
+            rel="stylesheet"
+            href="bpg-nateli-master/css/bpg-nateli.min.css"
+        />
+    </head>
+    <body id="servicesBD">
+        <!--===========================online-contact=============================-->
+        <div class="contact_corner_box">
+            <div class="contact_corner_content active">
+                <div class="contact_header">
+                    <div class="contact_header_title_box">
+                        <h3>contact us</h3>
+                        <div>
+                            <i class="fa fa-circle"></i>
+                            <p>online</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-minus message_box_remove_btn"></i>
+                </div>
+                <div class="contact_chat_box">
+                    <div class="message_box">
+                        <!-- 
+      <h3>22:13</h3>
+      <div>
+        <p>hello my name is zzz</p>
       </div>
-    </section>
-    <br>
-    <section class="main-container">
-      <div class="left-section">
-        <div class="category-form">
-          <div class="category-box">
-            ბენეფიციარები <span class="benef arrow"></span>
-          </div>
-          <div class="categories-all overflowScrollBar" id="beneficiaries">
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="მოსახლეობა"
-                name="population"
-                id="population"
-              />
-              <label for="population">მოსახლეობა</label>
+       -->
+                    </div>
+                </div>
+                <div class="contact_input_box">
+                    <input type="text" placeholder="type something" />
+                    <i class="fa fa-paper-plane send_msg_btn"></i>
+                </div>
             </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ოჯახები"
-                name="family"
-                id="family"
-              />
-              <label for="family">ოჯახები</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ახალგაზრდები"
-                name="youth"
-                id="youth"
-              />
-              <label for="youth">ახალგაზრდები</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="სტუდენტები"
-                name="students"
-                id="students"
-              />
-              <label for="students">სტუდენტები</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ბავშვები"
-                name="children"
-                id="children"
-              />
-              <label for="children">ბავშვები</label>
-            </div>
-          </div>
+            <i class="fa fa-message chat_open_btn"></i>
         </div>
-        <div class="category-form">
-          <div class="category-box">
-            კატეგორია<span class="category arrow"></span>
-          </div>
-          <div class="categories-all overflowScrollBar" id="categories">
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="განათლება"
-                name="education"
-                id="education"
-              />
-              <label for="education">განათლება</label>
+        <!--===========================nav=============================-->
+        <section class="navbar_container">
+            <nav>
+                <div class="navbar_box1" onclick="location.href='index.html'">
+                    <img src="img/Social Services Logo (middle).png" alt="" />
+                    <h1>სოციალური სერვისები</h1>
+                </div>
+                <div class="navbar_box2">
+                    <ul>
+                        <li>
+                            <a href="index.html">მთავარი</a>
+                        </li>
+                        <li>
+                            <a href="services.html">სერვისები</a>
+                        </li>
+                        <li>
+                            <a href="#">ჩვენ შესახებ</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">კონტაქტები</a>
+                        </li>
+                        <li>
+                            <div class="navbar_search_box">
+                                <input
+                                    class="navbarsearch_input"
+                                    type="text"
+                                    placeholder="ძებნა..."
+                                />
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </li>
+                        <div class="navbar_menu">
+                            <span class="line1"></span>
+                            <span class="line2"></span>
+                            <span class="line3"></span>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+            <div class="responsive_navbar_box">
+                <ul>
+                    <li onclick="location.href='index.html'">
+                        <a href="index.html">მთავარი</a>
+                    </li>
+                    <li onclick="location.href='services.html'">
+                        <a href="services.html">სერვისები</a>
+                    </li>
+                    <li>
+                        <a href="#">ჩვენ შესახებ</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">კონტაქტები</a>
+                    </li>
+                </ul>
             </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="დასაქმება"
-                name="employment"
-                id="employment"
-              />
-              <label for="employment">დასაქმება</label>
+        </section>
+        <br />
+        <!--===========================filter=============================-->
+        <section class="main-container">
+            <div class="left-section">
+                <div class="category-form">
+                    <div class="category-box">
+                        ბენეფიციარები <span class="benef arrow"></span>
+                    </div>
+                    <div
+                        class="categories-all overflowScrollBar"
+                        id="beneficiaries"
+                    >
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="მოსახლეობა"
+                                name="population"
+                                id="population"
+                            />
+                            <label for="population">მოსახლეობა</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ოჯახები"
+                                name="family"
+                                id="family"
+                            />
+                            <label for="family">ოჯახები</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ახალგაზრდები"
+                                name="youth"
+                                id="youth"
+                            />
+                            <label for="youth">ახალგაზრდები</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="სტუდენტები"
+                                name="students"
+                                id="students"
+                            />
+                            <label for="students">სტუდენტები</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ბავშვები"
+                                name="children"
+                                id="children"
+                            />
+                            <label for="children">ბავშვები</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-form">
+                    <div class="category-box">
+                        კატეგორია<span class="category arrow"></span>
+                    </div>
+                    <div
+                        class="categories-all overflowScrollBar"
+                        id="categories"
+                    >
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="განათლება"
+                                name="education"
+                                id="education"
+                            />
+                            <label for="education">განათლება</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="დასაქმება"
+                                name="employment"
+                                id="employment"
+                            />
+                            <label for="employment">დასაქმება</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="კულტურა"
+                                name="culture"
+                                id="culture"
+                            />
+                            <label for="culture">კულტურა</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="მატერიალური დახმარება"
+                                name="material-assistance"
+                                id="material-assistance"
+                            />
+                            <label for="material-assistance"
+                                >მატერიალური დახმარება</label
+                            >
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="რეინტეგრაცია"
+                                name="reintegration"
+                                id="reintegration"
+                            />
+                            <label for="reintegration">რეინტეგრაცია</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="სოციალური კონსულტაცია"
+                                name="social-counseling"
+                                id="social-counseling"
+                            />
+                            <label for="social-counseling"
+                                >სოციალური კონსულტაცია</label
+                            >
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="სპორტი"
+                                name="sport"
+                                id="sport"
+                            />
+                            <label for="sport">სპორტი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ჯანდაცვა"
+                                name="healthcare"
+                                id="healthcare"
+                            />
+                            <label for="healthcare">ჯანდაცვა</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-form">
+                    <div class="category-box">
+                        ლოკაცია<span class="locations arrow"></span>
+                    </div>
+                    <div
+                        class="categories-all overflowScrollBar"
+                        id="locations"
+                    >
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="საქართველო"
+                                name="sakartvelo"
+                                id="sakartvelo"
+                            />
+                            <label for="sakartvelo">საქართველო</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="აფხაზეთი"
+                                name="abkhazia"
+                                id="abkhazia"
+                            />
+                            <label for="abkhazia">აფხაზეთი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="აჭარა"
+                                name="adjara"
+                                id="adjara"
+                            />
+                            <label for="adjara">აჭარა</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="გურია"
+                                name="guria"
+                                id="guria"
+                            />
+                            <label for="guria">გურია</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="იმერეთი"
+                                name="imereti"
+                                id="imereti"
+                            />
+                            <label for="imereti">იმერეთი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="კახეთი"
+                                name="kakheti"
+                                id="kakheti"
+                            />
+                            <label for="kakheti">კახეთი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="მცხეთა-მთიანეთი"
+                                name="mtskheta-mtianeti"
+                                id="mtskheta-mtianeti"
+                            />
+                            <label for="mtskheta-mtianeti"
+                                >მცხეთა-მთიანეთი</label
+                            >
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="რაჭა"
+                                name="racha"
+                                id="racha"
+                            />
+                            <label for="racha">რაჭა</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ლეჩხუმი"
+                                name="lechkhumi"
+                                id="lechkhumi"
+                            />
+                            <label for="lechkhumi">ლეჩხუმი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ქვემო სვანეთი"
+                                name="kvemo-svaneti"
+                                id="kvemo-svaneti"
+                            />
+                            <label for="kvemo-svaneti">ქვემო სვანეთი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="სამეგრელო"
+                                name="samegrelo"
+                                id="samegrelo"
+                            />
+                            <label for="samegrelo">სამეგრელო</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ზემო სვანეთი"
+                                name="ზემო სვანეთი"
+                                id="ზემო სვანეთი"
+                            />
+                            <label for="ზემო სვანეთი">ზემო სვანეთი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="სამცხე-ჯავახეთი"
+                                name="samtskhe-javakheti"
+                                id="samtskhe-javakheti"
+                            />
+                            <label for="samtskhe-javakheti"
+                                >სამცხე-ჯავახეთი</label
+                            >
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="ქვემო ქართლი"
+                                name="kvemo-kartli"
+                                id="kvemo-kartli"
+                            />
+                            <label for="kvemo-kartli">ქვემო ქართლი</label>
+                        </div>
+                        <div class="category-input">
+                            <input
+                                type="checkbox"
+                                value="შიდა ქართლი"
+                                name="shida-kartli"
+                                id="shida-kartli"
+                            />
+                            <label for="shida-kartli">შიდა ქართლი</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="კულტურა"
-                name="culture"
-                id="culture"
-              />
-              <label for="culture">კულტურა</label>
+            <div class="right-section">
+                <div class="render-here"></div>
             </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="მატერიალური დახმარება"
-                name="material-assistance"
-                id="material-assistance"
-              />
-              <label for="material-assistance">მატერიალური დახმარება</label>
+        </section>
+        <br />
+        <!--===========================footer=============================-->
+        <section class="footer_container">
+            <div class="footer_content">
+                <div class="footer_top_row">
+                    <ul>
+                        <li>
+                            <img
+                                src="img/Social Services Logo (middle).png"
+                                alt="#"
+                            />
+                            <h3>სოციალური სერვისები</h3>
+                        </li>
+                        <li>
+                            <a href="#">WEEBLY THEMES</a>
+                            <a href="#">PRE-SALE FAQS</a>
+                            <a href="#">SUBMIT A TICKET</a>
+                        </li>
+                        <li>
+                            <a href="#">SERVICES</a>
+                            <a href="#">THEME TWEAK</a>
+                        </li>
+                        <li>
+                            <a href="#">SHOWCASE</a>
+                            <a href="#">WIDGETKIT</a>
+                            <a href="#">SUPPORT</a>
+                        </li>
+                        <li>
+                            <a href="#">ABOUT US</a>
+                            <a href="#">CONTACT US</a>
+                            <a href="#">AFFILIATES</a>
+                            <a href="#">RESOURCES</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_bottom_row">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
             </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="რეინტეგრაცია"
-                name="reintegration"
-                id="reintegration"
-              />
-              <label for="reintegration">რეინტეგრაცია</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="სოციალური კონსულტაცია"
-                name="social-counseling"
-                id="social-counseling"
-              />
-              <label for="social-counseling">სოციალური კონსულტაცია</label>
-            </div>
-            <div class="category-input">
-              <input type="checkbox" value="სპორტი" name="sport" id="sport" />
-              <label for="sport">სპორტი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ჯანდაცვა"
-                name="healthcare"
-                id="healthcare"
-              />
-              <label for="healthcare">ჯანდაცვა</label>
-            </div>
-          </div>
-        </div>
-        <div class="category-form">
-          <div class="category-box">
-            ლოკაცია<span class="locations arrow"></span>
-          </div>
-          <div class="categories-all overflowScrollBar" id="locations">
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="საქართველო"
-                name="sakartvelo"
-                id="sakartvelo"
-              />
-              <label for="sakartvelo">საქართველო</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="აფხაზეთი"
-                name="abkhazia"
-                id="abkhazia"
-              />
-              <label for="abkhazia">აფხაზეთი</label>
-            </div>
-            <div class="category-input">
-              <input type="checkbox" value="აჭარა" name="adjara" id="adjara" />
-              <label for="adjara">აჭარა</label>
-            </div>
-            <div class="category-input">
-              <input type="checkbox" value="გურია" name="guria" id="guria" />
-              <label for="guria">გურია</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="იმერეთი"
-                name="imereti"
-                id="imereti"
-              />
-              <label for="imereti">იმერეთი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="კახეთი"
-                name="kakheti"
-                id="kakheti"
-              />
-              <label for="kakheti">კახეთი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="მცხეთა-მთიანეთი"
-                name="mtskheta-mtianeti"
-                id="mtskheta-mtianeti"
-              />
-              <label for="mtskheta-mtianeti">მცხეთა-მთიანეთი</label>
-            </div>
-            <div class="category-input">
-              <input type="checkbox" value="რაჭა" name="racha" id="racha" />
-              <label for="racha">რაჭა</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ლეჩხუმი"
-                name="lechkhumi"
-                id="lechkhumi"
-              />
-              <label for="lechkhumi">ლეჩხუმი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ქვემო სვანეთი"
-                name="kvemo-svaneti"
-                id="kvemo-svaneti"
-              />
-              <label for="kvemo-svaneti">ქვემო სვანეთი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="სამეგრელო"
-                name="samegrelo"
-                id="samegrelo"
-              />
-              <label for="samegrelo">სამეგრელო</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ზემო სვანეთი"
-                name="ზემო სვანეთი"
-                id="ზემო სვანეთი"
-              />
-              <label for="ზემო სვანეთი">ზემო სვანეთი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="სამცხე-ჯავახეთი"
-                name="samtskhe-javakheti"
-                id="samtskhe-javakheti"
-              />
-              <label for="samtskhe-javakheti">სამცხე-ჯავახეთი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="ქვემო ქართლი"
-                name="kvemo-kartli"
-                id="kvemo-kartli"
-              />
-              <label for="kvemo-kartli">ქვემო ქართლი</label>
-            </div>
-            <div class="category-input">
-              <input
-                type="checkbox"
-                value="შიდა ქართლი"
-                name="shida-kartli"
-                id="shida-kartli"
-              />
-              <label for="shida-kartli">შიდა ქართლი</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="right-section">
-        <div class="render-here"></div>
-      </div>
-    </section>
-    <br>
-    
-    <!--===========================footer=============================-->
-     <section class="footer_container" >
-      <div class="footer_content">
-        <div class="footer_top_row">
-          <ul>
-            <li>
-              <img src="img/Social Services Logo (middle).png" alt="#" />
-              <h3>სოციალური სერვისები</h3>
-            </li>
-            <li>
-              <a href="#">WEEBLY THEMES</a>
-              <a href="#">PRE-SALE FAQS</a>
-              <a href="#">SUBMIT A TICKET</a>
-            </li>
-            <li>
-              <a href="#">SERVICES</a>
-              <a href="#">THEME TWEAK</a>
-            </li>
-            <li>
-              <a href="#">SHOWCASE</a>
-              <a href="#">WIDGETKIT</a>
-              <a href="#">SUPPORT</a>
-            </li>
-            <li>
-              <a href="#">ABOUT US</a>
-              <a href="#">CONTACT US</a>
-              <a href="#">AFFILIATES</a>
-              <a href="#">RESOURCES</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer_bottom_row">
-          <i class="fa fa-facebook"></i>
-          <i class="fa fa-twitter"></i>
-          <i class="fa fa-instagram"></i>
-          <i class="fa fa-linkedin"></i>
-        </div>
-      </div>
-    </section>
-    
-    <script src="app.js" type="module" defer></script>
-  </body>
+        </section>
+
+        <script src="app.js" type="module" defer></script>
+    </body>
 </html>
