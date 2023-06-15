@@ -788,15 +788,14 @@ nav {
 
 .main-container {
     width: 100%;
-     height: auto;
+    height: auto;
     margin-top: 50px;
     padding: 4rem 6rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     gap: 2rem;
     transition: padding-right 1s, padding-left 1s;
-
 }
 
 .main-container.active {
@@ -805,7 +804,6 @@ nav {
 }
 
 /*=============== left - section ============ */
-
 
 .left-section {
     width: 270px;
@@ -817,9 +815,6 @@ nav {
     width: 100%;
     border-radius: 0.4rem;
 }
-
-
-
 
 .category-box {
     width: 100%;
@@ -849,7 +844,6 @@ nav {
     transform: rotate(-45deg);
     border-radius: 1px;
     transition: transform 0s;
-
 }
 
 .rotate {
@@ -857,7 +851,6 @@ nav {
     border-color: var(--main_bg_color_bl);
     transition: transform 0s;
 }
-
 
 .categories-all {
     padding: 0 1.5rem 0.3rem 1.5rem;
@@ -868,7 +861,6 @@ nav {
     max-height: 300px;
     overflow-y: scroll;
     scroll-behavior: smooth;
-
 }
 
 .category-box:hover {
@@ -935,7 +927,7 @@ nav {
     margin: 0.9rem 0;
 }
 
-.category-input input[type=checkbox] {
+.category-input input[type="checkbox"] {
     cursor: pointer;
     width: 17px;
     height: 17px;
@@ -950,7 +942,6 @@ nav {
     height: 100%;
     flex-grow: 1;
 }
-
 
 .container-info {
     margin-bottom: 0.5rem;
@@ -1034,7 +1025,6 @@ nav {
     animation-delay: 0s;
 }
 
-
 .right-section .description p {
     font-size: 0.95rem;
     line-height: 1.2rem;
@@ -1045,7 +1035,6 @@ nav {
 .right-section .description.display {
     display: flex;
 }
-
 
 .right-section .description .seeMorelink,
 .right-section .description .seeMorelink:link,
@@ -1063,7 +1052,6 @@ nav {
 .right-section .description .seeMorelink:hover {
     background-color: rgb(213, 213, 213);
 }
-
 
 .seemore-btn {
     display: none;
@@ -1089,30 +1077,29 @@ nav {
     display: flex;
 }
 
-/===========================(contact.html)contact-section=============================/
-.contact_container{
+/*===========================(contact.html)contact-section=============================*/
+.contact_container {
     margin-top: 9.8rem;
-width: 100%;
+    width: 100%;
 }
-.contact_content{
+.contact_content {
     display: flex;
-padding: 1.25rem 6rem;
-gap: 20px;
-width: 100%;
-background-color: #1a1a1a;
+    padding: 1.25rem 6rem;
+    gap: 20px;
+    width: 100%;
+    background-color: #1a1a1a;
 }
-.contact_left_column{
+.contact_left_column {
     width: 50%;
-background-color: #056779;
+    background-color: #056779;
 }
-.contact_left_column form{
+.contact_left_column form {
     display: flex;
     flex-direction: column;
-gap: 1.25rem;
-
+    gap: 1.25rem;
 }
 
-.contact_left_column form h1{
+.contact_left_column form h1 {
     margin-bottom: 1rem;
     font-size: 2.25rem;
     font-weight: 700;
@@ -1120,28 +1107,28 @@ gap: 1.25rem;
     font-family: "Poppins", sans-serif;
 }
 
-.contact_left_column form input{
+.contact_left_column form input {
     padding: 0.875rem 1rem;
     border: 1px solid rgba(0, 0, 0, 0.264);
     font-size: 1rem;
     border-radius: 0.2rem;
     outline: none;
 }
-.contact_left_column form button{
+.contact_left_column form button {
     padding: 0.875rem 1rem;
-border-radius: 0.2rem;
-border: none;
-font-size: 1.1rem;
-color: white;
-background-color: #056779;
-cursor: pointer;
-transition: all 0.5s;
+    border-radius: 0.2rem;
+    border: none;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #056779;
+    cursor: pointer;
+    transition: all 0.5s;
 }
-.contact_left_column form button:hover{
-background-color: #2b8a9b;
+.contact_left_column form button:hover {
+    background-color: #2b8a9b;
 }
 
-.contact_right_column{
+.contact_right_column {
     width: 50%;
     padding: 1.25rem;
     background-color: whitesmoke;
@@ -1232,7 +1219,7 @@ background-color: #2b8a9b;
     .map_right_column .map_links a {
         margin-bottom: 1.25rem;
     }
-    
+
     nav {
         padding-right: 1.5rem;
         padding-left: 1.5rem;
@@ -1350,12 +1337,11 @@ background-color: #2b8a9b;
 }
 
 @media (max-width: 632px) {
-       nav {
+    nav {
         padding: 1rem;
     }
 
     .main-container {
-       
         padding: 2rem 1rem;
     }
 
