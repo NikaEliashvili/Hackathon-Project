@@ -650,7 +650,7 @@ nav {
     align-items: center;
     cursor: pointer;
     z-index: 1000;
-    transition: all 0.5s;
+    transition: all 0.3s;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.439);
 }
@@ -665,7 +665,7 @@ nav {
     background-color: #e3e0e0;
     background-size: cover;
     z-index: 1000;
-    transition: all 0.5s;
+    transition: all 0.3s;
     overflow: hidden;
     z-index: 1000;
 }
@@ -678,7 +678,7 @@ nav {
     border-radius: 0;
     background-color: #e3e0e0;
     z-index: 1000;
-    transition: all 0.5s;
+    transition: all 0.3s;
     overflow: hidden;
     z-index: 1000;
 }
