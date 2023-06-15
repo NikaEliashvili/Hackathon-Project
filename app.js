@@ -211,6 +211,15 @@ switch (Page) {
     });
     document.addEventListener("DOMContentLoaded", filterFunction);
     break;
+    
+    case "contactBD":
+    /===========================EVENTLISTENERS=============================/
+    navbar_menu.addEventListener("click", navbarMenuClick);
+    navbar_search_I.addEventListener("click", NavsearchbaruClick);
+    window.addEventListener("scroll", scrollFunc);
+
+    break;
+ 
 }
 
 /*============================Functions for "servicesBD" ======*/
@@ -346,4 +355,6 @@ function filterFunction() {
     console.log(findObjects);
   }
 }
+
+/============================Functions for "contactBD" ======/
 
