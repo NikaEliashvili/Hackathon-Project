@@ -794,7 +794,7 @@ nav {
     padding: 4rem 6rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     gap: 2rem;
     transition: padding-right 1s, padding-left 1s;
 
