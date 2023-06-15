@@ -315,10 +315,10 @@ nav {
 }
 .about_box h1 {
     text-align: left;
-    margin-bottom: 50px;
+    margin-bottom: 1.875rem;
     position: relative;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 .about_box h1::before {
     content: " ";
@@ -334,16 +334,16 @@ nav {
 }
 
 .about_paragraph p {
-    line-height: 2.2rem;
+    line-height: 1.8rem;
     color: #555;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: 1.5px;
 }
 /*===========================statistic-section=============================*/
 
 .static_container {
-    margin-top: 6.25rem;
+    margin-top: 3.125rem;
     padding: 80px 0;
     padding-left: 0;
     background-image: url(img/statisticbanner_img.jpg);
@@ -550,7 +550,7 @@ nav {
 }
 .map_box svg path {
     cursor: pointer;
-    transition: all 1s;
+    transition: all 0.3s;
 }
 
 .map_box svg path:hover {
