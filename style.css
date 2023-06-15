@@ -787,14 +787,13 @@ nav {
 /* ============== CATEGORY SECTION ================== */
 
 .main-container {
-    position: absolute;
     width: 100%;
      height: auto;
     margin-top: 50px;
     padding: 4rem 6rem;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     gap: 2rem;
     transition: padding-right 1s, padding-left 1s;
 
@@ -1090,6 +1089,63 @@ nav {
     display: flex;
 }
 
+/===========================(contact.html)contact-section=============================/
+.contact_container{
+    margin-top: 9.8rem;
+width: 100%;
+}
+.contact_content{
+    display: flex;
+padding: 1.25rem 6rem;
+gap: 20px;
+width: 100%;
+background-color: #1a1a1a;
+}
+.contact_left_column{
+    width: 50%;
+background-color: #056779;
+}
+.contact_left_column form{
+    display: flex;
+    flex-direction: column;
+gap: 1.25rem;
+
+}
+
+.contact_left_column form h1{
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+.contact_left_column form input{
+    padding: 0.875rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.264);
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    outline: none;
+}
+.contact_left_column form button{
+    padding: 0.875rem 1rem;
+border-radius: 0.2rem;
+border: none;
+font-size: 1.1rem;
+color: white;
+background-color: #056779;
+cursor: pointer;
+transition: all 0.5s;
+}
+.contact_left_column form button:hover{
+background-color: #2b8a9b;
+}
+
+.contact_right_column{
+    width: 50%;
+    padding: 1.25rem;
+    background-color: whitesmoke;
+}
 
 /*===========================mediaquery-section=============================*/
 @media (max-width: 1200px) {
