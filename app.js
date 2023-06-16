@@ -5,7 +5,7 @@ const Page = document.body.id;
 const navbar_container_nav = document.querySelector(".navbar_container nav");
 const navbar_menu = document.querySelector(".navbar_menu");
 const navbar_box1_img = document.querySelector(".navbar_box1 img");
-const navbar_search_I = document.querySelector(".navbar_search_box ");
+const navbar_search_I = document.querySelector(".navbar_search_box i");
 const navbar_search_Input = document.querySelector(".navbarsearch_input");
 const closed_dropdown_bar = document.querySelectorAll(".closed_dropdown_bar");
 const spn2 = document.querySelectorAll(".spn2");
@@ -57,13 +57,15 @@ function scrollFunc() {
 }
 
 function NavsearchbaruClick() {
-    navbar_search_Input.value = "";
-    // if (scrollFunc() > 80) {
-    // } else if (navbar_search_Input.value != "") {
-    //     navbar_search_Input.classList.toggle("active1");
-    // }
     if (window.scrollY > 80) {
         navbar_search_Input.classList.toggle("active1");
+        if (navbar_search_Input.value.trim() != 0) {
+            console.log(navbar_search_Input.value);
+            navbar_search_Input.value = "";
+        }
+    } else if (navbar_search_Input.value.trim() != 0) {
+        console.log(navbar_search_Input.value);
+        navbar_search_Input.value = "";
     }
 }
 
@@ -120,7 +122,7 @@ for (let i = 0; i < counters.length; i++) {
     }
     staticTimer();
 }
-
+/*
 //online contact btn
 function contactBtnclickOpen() {
     if (window.innerWidth <= 400) {
@@ -170,16 +172,16 @@ function messageclickBtn() {
 function messageKeybindBtn(e) {
     if (e.key == "Enter") messageclickBtn();
 }
-
+*/
 switch (Page) {
     case "indexBD":
         //===========================EVENTLISTENERS=============================
         navbar_menu.addEventListener("click", navbarMenuClick);
         navbar_search_I.addEventListener("click", NavsearchbaruClick);
-        contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
-        message_box_remove_btn.addEventListener("click", contactBtnclickClose);
-        send_msg_btn.addEventListener("click", messageclickBtn);
-        contact_input.addEventListener("keyup", messageKeybindBtn);
+        //contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
+        //message_box_remove_btn.addEventListener("click", contactBtnclickClose);
+        //send_msg_btn.addEventListener("click", messageclickBtn);
+        //contact_input.addEventListener("keyup", messageKeybindBtn);
         window.addEventListener("scroll", scrollFunc);
 
         //===========================sliders=============================

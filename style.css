@@ -540,7 +540,7 @@ nav {
     font-weight: 500;
 }
 .map_right_column .map_links a:hover {
-    background-color: #94e3f1;
+    background-color: rgb(137, 200, 212);
     color: black;
 }
 .map_box {
@@ -695,6 +695,10 @@ nav {
 }
 .contact_corner_box .chat_open_btn {
     font-size: 1.4rem;
+    transition: all 0.1s;
+}
+.contact_corner_box .chat_open_btn:hover {
+    font-size: 1.6rem;
 }
 .chat_open_btn {
     display: flex;
@@ -726,8 +730,9 @@ nav {
     flex-direction: column;
 }
 .contact_header_title_box h3 {
-    font-weight: 800;
+    font-weight: 500;
     color: white;
+    letter-spacing: 1px;
 }
 .contact_header_title_box div {
     display: flex;
@@ -745,13 +750,14 @@ nav {
 .contact_chat_box {
     width: 100%;
     height: 50vh;
-    overflow: scroll;
     overflow-x: hidden;
+    word-break: break-all;
     padding: 1rem 1rem 0 1rem;
     align-self: stretch;
     max-height: 400px;
     background: url(img/contact-background-pattern-01\ .svg);
 }
+
 .message_box {
     width: 100%;
     margin-bottom: 1rem;
@@ -765,6 +771,7 @@ nav {
     color: var(--text-main-color);
     font-weight: 600;
     padding-right: 0.625rem;
+    text-align: center;
 }
 .message_box div {
     width: 100%;
@@ -777,7 +784,8 @@ nav {
     font-weight: 300;
     background-color: var(--text-main-color);
     padding: 0.5rem 0.625rem;
-    border-radius: 10vw;
+    border-radius: 0.4rem;
+    text-align: left;
 }
 .contact_input_box {
     width: 100%;
