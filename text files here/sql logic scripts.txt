@@ -1,0 +1,30 @@
+-- selecting with locations...
+/*
+SELECT [id]
+      ,[locations]
+	  ,[region]
+FROM SocialServicesDB.dbo.SocialServiceTable
+WHERE locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ბათუმი%'
+   OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ქედა%'
+   OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ქობულეთი%'
+   OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%შუახევი%';
+
+   */
+
+   -- UPDATE COLUMN WITH A LOGIC to create a string. 
+
+                UPDATE SocialServicesDB.dbo.SocialServiceTable
+                SET region = ISNULL(region, N'') + N', იმერეთი'
+                WHERE 
+                locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ქუთაისი%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ბაღდათი%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ვანი%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ზესტაფონი%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%თერჯოლა%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%სამტრედია%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ჭიათურა%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ტყიბული%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%საჩხერე%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%წყალტუბო%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ხარაგაული%'
+                OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ხონი%';
