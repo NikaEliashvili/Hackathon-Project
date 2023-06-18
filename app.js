@@ -1,10 +1,11 @@
-/*===========================DOM=============================*/
+//===========================DOM=============================
 const navbarCont = document.querySelector(".navbar_container");
+const body = document.querySelector("body");
 const Page = document.body.id;
 const navbar_container_nav = document.querySelector(".navbar_container nav");
 const navbar_menu = document.querySelector(".navbar_menu");
 const navbar_box1_img = document.querySelector(".navbar_box1 img");
-const navbar_search_I = document.querySelector(".navbar_search_box ");
+const navbar_search_I = document.querySelector(".navbar_search_box i");
 const navbar_search_Input = document.querySelector(".navbarsearch_input");
 const closed_dropdown_bar = document.querySelectorAll(".closed_dropdown_bar");
 const spn2 = document.querySelectorAll(".spn2");
@@ -39,13 +40,12 @@ const beneficiaries = document.getElementById("beneficiaries");
 const categories = document.getElementById("categories");
 const locations = document.getElementById("locations");
 const mainContainerEl = document.querySelector(".main-container");
-
 let startIndex = 0;
 let endIndex = 30;
-/*=====================  import data.js  ===========================*/
+//=====================  import data.js  ===========================
 import data from "./data.js";
 
-/*===========================FUNCTIONS-indexDB=============================*/
+//===========================FUNCTIONS-indexDB=============================
 function scrollFunc() {
   navbarCont.classList.toggle("active", scrollY > 80);
   navbar_box1_img.classList.toggle("active", scrollY > 80);
@@ -56,10 +56,15 @@ function scrollFunc() {
 }
 
 function NavsearchbaruClick() {
-  navbar_search_Input.value = "";
-  if (scrollFunc() > 80) {
-  } else {
+  if (window.scrollY > 80) {
     navbar_search_Input.classList.toggle("active1");
+    if (navbar_search_Input.value.trim() != 0) {
+      console.log(navbar_search_Input.value);
+      navbar_search_Input.value = "";
+    }
+  } else if (navbar_search_Input.value.trim() != 0) {
+    console.log(navbar_search_Input.value);
+    navbar_search_Input.value = "";
   }
 }
 
@@ -116,60 +121,69 @@ for (let i = 0; i < counters.length; i++) {
   }
   staticTimer();
 }
-
+/*
 //online contact btn
 function contactBtnclickOpen() {
-  contact_corner_box.classList.add("active");
-  chat_open_btn.classList.add("active");
-  contact_corner_content.classList.remove("active");
+    if (window.innerWidth <= 400) {
+        contact_corner_box.classList.add("activemob");
+    } else {
+        contact_corner_box.classList.add("active");
+    }
+    chat_open_btn.classList.add("active");
+    contact_corner_content.classList.remove("active");
 }
 
 function contactBtnclickClose() {
-  contact_corner_box.classList.remove("active");
-  chat_open_btn.classList.remove("active");
-  contact_corner_content.classList.add("active");
+    if (window.innerWidth <= 400) {
+        contact_corner_box.classList.remove("activemob");
+        body.style.overflow = "hidden";
+    } else {
+        contact_corner_box.classList.remove("active");
+    }
+    chat_open_btn.classList.remove("active");
+    contact_corner_content.classList.add("active");
 }
 
 function scrollToBottom() {
-  contact_chat_box.scrollTop = contact_chat_box.scrollHeight;
+    contact_chat_box.scrollTop = contact_chat_box.scrollHeight;
 }
 
 function messageclickBtn() {
-  let day = new Date();
-  let hr = day.getHours();
-  let mn = day.getMinutes();
-  let sc = day.getSeconds();
-  if (contact_input.value.trim() != 0) {
-    let newmessage = document.createElement("div");
-    newmessage.classList.add("message_box");
-    newmessage.innerHTML = `
+    let day = new Date();
+    let hr = day.getHours();
+    let mn = day.getMinutes();
+    let sc = day.getSeconds();
+    if (contact_input.value.trim() != 0) {
+        let newmessage = document.createElement("div");
+        newmessage.classList.add("message_box");
+        newmessage.innerHTML = `
         <h3>${hr + ":" + mn}</h3>
         <div>
           <p>${contact_input.value}</p>
         </div>
 `;
-    contact_chat_box.appendChild(newmessage);
-    scrollToBottom();
-    contact_input.value = "";
-  }
+        contact_chat_box.appendChild(newmessage);
+        scrollToBottom();
+        contact_input.value = "";
+    }
 }
 
 function messageKeybindBtn(e) {
-  if (e.key == "Enter") messageclickBtn();
+    if (e.key == "Enter") messageclickBtn();
 }
-
+*/
 switch (Page) {
   case "indexBD":
-    /*===========================EVENTLISTENERS=============================*/
+    //===========================EVENTLISTENERS=============================
     navbar_menu.addEventListener("click", navbarMenuClick);
     navbar_search_I.addEventListener("click", NavsearchbaruClick);
-    contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
-    message_box_remove_btn.addEventListener("click", contactBtnclickClose);
-    send_msg_btn.addEventListener("click", messageclickBtn);
-    contact_input.addEventListener("keyup", messageKeybindBtn);
+    //contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
+    //message_box_remove_btn.addEventListener("click", contactBtnclickClose);
+    //send_msg_btn.addEventListener("click", messageclickBtn);
+    //contact_input.addEventListener("keyup", messageKeybindBtn);
     window.addEventListener("scroll", scrollFunc);
 
-    /*===========================sliders=============================*/
+    //===========================sliders=============================
     let slideIndex = 0;
     showSlides();
 
@@ -192,37 +206,52 @@ switch (Page) {
     break;
 
   case "servicesBD":
-       renderServices();
+    //renderServices();
 
-    /*=========================== Variables After rendering =================*/
+    //=========================== Variables After rendering =================
 
-    /*===========================EVENTLISTENERS=============================*/
+    //===========================EVENTLISTENERS=============================
     navbar_menu.addEventListener("click", navbarMenuClick);
     navbar_search_I.addEventListener("click", NavsearchbaruClick);
     window.addEventListener("scroll", scrollFunc);
     categoryBox[0].addEventListener("click", beneficiariesClick);
     categoryBox[1].addEventListener("click", categoryClicks);
     categoryBox[2].addEventListener("click", locationsClicks);
-    window.addEventListener("scroll", renderScroll);
-    document.addEventListener("click", (e) => {
-      if (e.target.dataset.titlecontainer) {
-        dropDownFunction(e.target.dataset.titlecontainer);
-      }
-    });
-    document.addEventListener("DOMContentLoaded", filterFunction);
+
+    mainContainerEl.addEventListener("click", dropDownFunction);
+
+    // window.addEventListener("scroll", renderScroll);
+    // document.addEventListener("click", (e) => {
+    //     if (e.target.dataset.titlecontainer) {
+    //         dropDownFunction(e.target.dataset.titlecontainer);
+    //     }
+    // });
+    // contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
+    // message_box_remove_btn.addEventListener("click", contactBtnclickClose);
+    // send_msg_btn.addEventListener("click", messageclickBtn);
+    // contact_input.addEventListener("keyup", messageKeybindBtn);
+    // document.addEventListener("DOMContentLoaded", filterFunction);
+
     break;
-    
-    case "contactBD":
-    /===========================EVENTLISTENERS=============================/
+
+  case "contactBD":
+    //===========================EVENTLISTENERS=============================
     navbar_menu.addEventListener("click", navbarMenuClick);
     navbar_search_I.addEventListener("click", NavsearchbaruClick);
     window.addEventListener("scroll", scrollFunc);
+    checkboxes.forEach((checkbox) =>
+      checkbox.addEventListener("change", handleCheckboxChange)
+    );
+
+    // contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
+    // message_box_remove_btn.addEventListener("click", contactBtnclickClose);
+    // send_msg_btn.addEventListener("click", messageclickBtn);
+    // contact_input.addEventListener("keyup", messageKeybindBtn);
 
     break;
- 
 }
 
-/*============================Functions for "servicesBD" ======*/
+//============================Functions for "servicesBD" ======
 
 function beneficiariesClick() {
   beneficiaries.classList.toggle("display");
@@ -246,21 +275,28 @@ function containerHeight(categoriesContainer) {
     containerHeight += categoryInputContainer[i].offsetHeight;
   }
   if (containerHeight > 300) {
-    console.log(containerHeight);
     categoriesContainer.classList.remove("overflowScrollBar");
   } else {
-    console.log(containerHeight);
     categoriesContainer.classList.add("overflowScrollBar");
   }
 }
 
-function dropDownFunction(titleId) {
-  const titleObj = data.filter(function (title) {
-    return title.id == titleId;
-  })[0];
-  console.log(titleObj);
-  document.getElementById(`${titleId}`).classList.toggle("display");
-  document.getElementById(`icon-${titleId}`).classList.toggle("rotatePlusIcon");
+function dropDownFunction(e) {
+  if (
+    e.target.classList.contains("title") ||
+    e.target.classList.contains("plus-icon") ||
+    e.target.classList.contains("main-info") ||
+    e.target.classList.contains("more-info") ||
+    e.target.classList.contains("title-text") ||
+    e.target.classList.contains("span") ||
+    e.target.classList.contains("small-section")
+  ) {
+    const dataValue = e.target.dataset.titlecontainer;
+    document.getElementById(`${dataValue}`).classList.toggle("display");
+    document
+      .getElementById(`icon-${dataValue}`)
+      .classList.toggle("rotatePlusIcon");
+  }
 }
 
 function feedServiceTabs() {
@@ -269,7 +305,6 @@ function feedServiceTabs() {
     maxIndex = data.length;
   }
   for (let i = startIndex; i < maxIndex; i++) {
-    console.log("MaxIndex", maxIndex);
     if (data.length >= maxIndex) {
       let dataInfo = data[i];
       let containerInfoDiv = document.createElement("div");
@@ -299,62 +334,61 @@ function feedServiceTabs() {
   startIndex = endIndex;
   endIndex += endIndex + 30;
 }
+/*=========== COMMENTED FUNCTIONS============================ */
+// function renderServices() {
+//     feedServiceTabs();
+// }
 
-function renderServices() {
-  feedServiceTabs();
-}
+// function renderScroll() {
+//     let innerContainerHeight = 0;
+//     let innerContainerEl = document.querySelectorAll(".container-info");
+//     for (let i = 0; i < innerContainerEl.length; i++) {
+//         innerContainerHeight += innerContainerEl[i].offsetHeight;
+//     }
+//     const scrollPosition = window.scrollY || window.pageYOffset;
+//     const scrollThreshold = innerContainerHeight - window.innerHeight - 100;
+//     console.log(innerContainerHeight);
+//     if (scrollPosition > scrollThreshold) {
+//         renderServices();
+//     }
+// }
 
-function renderScroll() {
-  let innerContainerHeight = 0;
-  let innerContainerEl = document.querySelectorAll(".container-info");
-  for (let i = 0; i < innerContainerEl.length; i++) {
-    innerContainerHeight += innerContainerEl[i].offsetHeight;
-  }
-  const scrollPosition = window.scrollY || window.pageYOffset;
-  const scrollThreshold = innerContainerHeight - window.innerHeight - 100;
-  console.log(innerContainerHeight);
-  if (scrollPosition > scrollThreshold) {
-    renderServices();
-  }
-}
+// function filterFunction() {
+//     const checkboxes = document.querySelectorAll(
+//         '#categories input[type="checkbox"]'
+//     );
+//     console.log(checkboxes);
+//     checkboxes.forEach(function (checkbox) {
+//         checkbox.addEventListener("change", function () {
+//             const selectedCategories = getSelectedCategories();
+//             filterInformation(selectedCategories);
+//         });
+//     });
 
-function filterFunction() {
-  const checkboxes = document.querySelectorAll(
-    '#categories input[type="checkbox"]'
-  );
-  console.log(checkboxes);
-  checkboxes.forEach(function (checkbox) {
-    checkbox.addEventListener("change", function () {
-      const selectedCategories = getSelectedCategories();
-      filterInformation(selectedCategories);
-    });
-  });
+//     function getSelectedCategories() {
+//         const selectedCategories = [];
+//         checkboxes.forEach(function (checkbox) {
+//             if (checkbox.checked) {
+//                 selectedCategories.push(checkbox.value);
+//             }
+//         });
+//         return selectedCategories;
+//     }
 
-  function getSelectedCategories() {
-    const selectedCategories = [];
-    checkboxes.forEach(function (checkbox) {
-      if (checkbox.checked) {
-        selectedCategories.push(checkbox.value);
-      }
-    });
-    return selectedCategories;
-  }
+//     function filterInformation(categories) {
+//         console.log(categories);
+//         let findObjects = [];
+//         let filterObjects;
+//         findObjects = data.filter((obj) => {
+//             for (let i = 0; i < categories.length; i++) {
+//                 console.log(categories[i]);
+//                 // console.log(obj.categories);
+//                 return categories[i] === obj.categories;
+//             }
+//         });
 
-  function filterInformation(categories) {
-    console.log(categories);
-    let findObjects = [];
-    let filterObjects;
-    findObjects = data.filter((obj) => {
-      for (let i = 0; i < categories.length; i++) {
-        console.log(categories[i]);
-        // console.log(obj.categories);
-        return categories[i] === obj.categories;
-      }
-    });
+//         console.log(findObjects);
+//     }
+// }
 
-    console.log(findObjects);
-  }
-}
-
-/============================Functions for "contactBD" ======/
-
+//===============Functions for "contactBD" ==================

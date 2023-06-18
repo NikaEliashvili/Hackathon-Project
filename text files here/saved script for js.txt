@@ -1,0 +1,53 @@
+<?php
+  // Check if form is submitted
+  if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    // Store checkbox values in session variables
+    $_SESSION['checkboxValues'] = $_GET['filterLoc'] ?? [];
+  }
+  ?>
+
+  <script>
+    $(document).ready(function() {
+      // Handle form submission
+      $('#submitBtn').click(function() {
+        // Get form data
+        var formData = $('#filterForm').serialize();
+
+        // Send AJAX request
+        $.ajax({
+          type: 'GET',
+          url: './php/getPosts.php',
+          data: formData,
+          success: function(response) {
+            // Handle the response from the server
+            console.log(response);
+            // You can update the page or perform any other actions here
+          }
+        });
+        $.ajax({
+          type: 'GET',
+          url: './php/getfiltersCategories.php',
+          data: formData,
+          success: function(response) {
+            // Handle the response from the server
+            console.log(response);
+            // You can update the page or perform any other actions here
+          }
+        });
+
+      });
+
+      // Restore checkbox states on page load
+      var checkboxValues = <?php echo json_encode($_SESSION['checkboxValues'] ?? []); ?>;
+      var locationCheckboxes = document.querySelectorAll('input[name="filterLoc[]"]');
+
+      locationCheckboxes.forEach(function(checkbox) {
+        checkbox.checked = checkboxValues.includes(checkbox.value);
+      });
+
+      // Clear session variables on page refresh
+      $(window).on('beforeunload', function() {
+        <?php unset($_SESSION['checkboxValues']); ?>
+      });
+    });
+  </script>
