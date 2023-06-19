@@ -1,17 +1,18 @@
 <?php
 include 'config.php';
-if ($conn === false) {
-    die(print_r(sqlsrv_errors(), true));
+// Check the connection
+if (!$conn) {
+    die('Connection failed: ' . mysqli_connect_error());
 }
-
 function getFiltersCategories($conn, $name)
 {
+
     $query = "SELECT $name FROM SocialServiceTable";
-    $result = sqlsrv_query($conn, $query);
+    $result = mysqli_query($conn, $query);
 
     $categories = array(); // Initialize an empty array to store distinct category values
 
-    while ($row = sqlsrv_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
 
         $categoryList = $row[$name];
         $categoryArray = explode(',', $categoryList); // Split the categories string into an array
@@ -23,15 +24,25 @@ function getFiltersCategories($conn, $name)
             }
         }
     }
+
     $checked = [];
-    if (isset($_GET['filterBen'])) {
-        $checked = $_GET['filterBen'];
-    }
-    if (isset($_GET['filterCat'])) {
-        $checked = $_GET['filterCat'];
-    }
-    if (isset($_GET['filterLoc'])) {
-        $checked = $_GET['filterLoc'];
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' || (isset($_GET['filterBen']) || isset($_GET['filterCat']) || isset($_GET['filterLoc']))) {
+        if (isset($_GET['filterBen'])) {
+            $checked = array_merge($checked, $_GET['filterBen']);
+        }
+        if (isset($_GET['filterCat'])) {
+            $checked = array_merge($checked, $_GET['filterCat']);
+        }
+        if (isset($_GET['filterLoc'])) {
+            $checked = array_merge($checked, $_GET['filterLoc']);
+        }
+
+        // Store the checked filters in session variables
+        $_SESSION['checkedFilters'] = $checked;
+    } else {
+        // If the form is not submitted, clear the filters by unsetting the session variable
+        unset($_SESSION['checkedFilters']);
+        header("Location: " . $_SERVER['PHP_SELF']);
     }
     sort($categories, SORT_LOCALE_STRING); // Sort the category values in Georgian alphabet order
 
@@ -70,11 +81,11 @@ function check($category, $checked)
 function getFiltersCategories($conn, $name)
 {
     $query = "SELECT $name FROM SocialServiceTable";
-    $result = sqlsrv_query($conn, $query);
+    $result = mysqli_query($conn, $query);
 
     $categories = array(); // Initialize an empty array to store distinct category values
 
-    while ($row = sqlsrv_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $categoryList = $row[$name];
         $categoryArray = explode(',', $categoryList); // Split the categories string into an array
 

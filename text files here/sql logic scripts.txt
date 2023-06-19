@@ -15,7 +15,7 @@ WHERE locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ბათუმი%'
 
                 UPDATE SocialServicesDB.dbo.SocialServiceTable
                 SET region = ISNULL(region, N'') + N', იმერეთი'
-                WHERE 
+                WHERE
                 locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ქუთაისი%'
                 OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ბაღდათი%'
                 OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ვანი%'
@@ -28,3 +28,23 @@ WHERE locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ბათუმი%'
                 OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%წყალტუბო%'
                 OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ხარაგაული%'
                 OR locations COLLATE Georgian_Modern_Sort_CI_AI LIKE N'%ხონი%';
+
+
+
+--- FOR MySQL Logic script
+
+            UPDATE SocialServiceTable
+                  SET region = CONCAT(IFNULL(region, ''), IF(region IS NULL, '', ', '), 'იმერეთი')
+                  WHERE
+                  locations LIKE '%ქუთაისი%'
+                  OR locations LIKE '%ბაღდათი%'
+                  OR locations LIKE '%ვანი%'
+                  OR locations LIKE '%ზესტაფონი%'
+                  OR locations LIKE '%თერჯოლა%'
+                  OR locations LIKE '%სამტრედია%'
+                  OR locations LIKE '%ჭიათურა%'
+                  OR locations LIKE '%ტყიბული%'
+                  OR locations LIKE '%საჩხერე%'
+                  OR locations LIKE '%წყალტუბო%'
+                  OR locations LIKE '%ხარაგაული%'
+                  OR locations LIKE '%ხონი%';

@@ -277,7 +277,6 @@ if ($conn === false) {
 
 
 
-
   <script src="app.js" type="module" defer></script>
 
 </body>
