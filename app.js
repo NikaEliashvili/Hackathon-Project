@@ -40,6 +40,17 @@ const beneficiaries = document.getElementById("beneficiaries");
 const categories = document.getElementById("categories");
 const locations = document.getElementById("locations");
 const mainContainerEl = document.querySelector(".main-container");
+const clearBtn = document.getElementById("clearBtn");
+const locationCheckboxes = document.querySelectorAll(
+  'input[name="filterLoc[]"]'
+);
+const categoriesCheckboxes = document.querySelectorAll(
+  'input[name="filterCat[]"]'
+);
+const beneficiariesCheckboxes = document.querySelectorAll(
+  'input[name="filterBen[]"]'
+);
+
 let startIndex = 0;
 let endIndex = 30;
 //=====================  import data.js  ===========================
@@ -219,7 +230,7 @@ switch (Page) {
     categoryBox[2].addEventListener("click", locationsClicks);
 
     mainContainerEl.addEventListener("click", dropDownFunction);
-
+    //clearBtn.addEventListener("click", clearFunction);
     // window.addEventListener("scroll", renderScroll);
     // document.addEventListener("click", (e) => {
     //     if (e.target.dataset.titlecontainer) {

@@ -26,6 +26,10 @@ function getFiltersCategories($conn, $name)
     }
 
     $checked = [];
+    // if (isset($_GET['clearBtn'])) {
+    //     unset($_SESSION['checkedFilters']);
+    //     // header("Location: " . $_SERVER['PHP_SELF']);
+    // }
     if ($_SERVER['REQUEST_METHOD'] === 'GET' || (isset($_GET['filterBen']) || isset($_GET['filterCat']) || isset($_GET['filterLoc']))) {
         if (isset($_GET['filterBen'])) {
             $checked = array_merge($checked, $_GET['filterBen']);
@@ -61,9 +65,7 @@ function getFiltersCategories($conn, $name)
 ?>
         <div class="category-input">
             <input type="checkbox" value="<?= $category; ?>" name="<?= $filterName; ?>" id="<?= $category; ?>" <?php
-                                                                                                                if (in_array($category, $checked)) {
-                                                                                                                    echo "checked";
-                                                                                                                }
+                                                                                                                check($category, $checked)
                                                                                                                 ?> />
             <label for="<?= $category; ?>"><?= $category; ?></label>
 

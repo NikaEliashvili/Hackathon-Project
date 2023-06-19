@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
     background-color: white;
     overflow-x: hidden;
     font-family: "BPG Nateli", sans-serif;
@@ -945,10 +945,60 @@ nav {
     height: 100%;
 }
 
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 0.5rem;
+}
+
 .category-form {
     margin-bottom: 0.3rem;
     width: 100%;
     border-radius: 0.4rem;
+}
+
+.clearBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    padding: 0.6rem;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 0.6rem;
+    color: white;
+    border: none;
+    box-shadow: inset 0 -4px 0px #0b3561;
+}
+
+.clearBtn:hover {
+    background-color: #007bff;
+    box-shadow: inset 0 -1px 0px #0b3561;
+    scale: 0.99;
+}
+
+.cleaning-icon {
+    margin: 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: rgba(255, 255, 255, 1);
+    transition: fill 0.1s;
+}
+
+.clearBtn:hover .cleaning-icon {
+    fill: rgb(0, 0, 0)
+}
+
+.clearBtn span {
+    display: inline-block;
+    font-family: "BPG Nateli", sans-serif;
+    color: var(--main_bg_color_wt);
+    font-weight: 900;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    margin-right: 0.5rem;
 }
 
 .category-box {
@@ -960,9 +1010,9 @@ nav {
     padding: 1rem 1.5rem;
     position: relative;
     border-radius: 0.4rem;
-
     cursor: pointer;
 }
+
 
 .arrow {
     position: absolute;
@@ -983,12 +1033,12 @@ nav {
 
 .rotate {
     transform: rotate(135deg);
-    border-color: var(--main_bg_color_bl);
+    border-color: #007BFF;
     transition: transform 0s;
 }
 
 .categories-all {
-    padding: 0 1.5rem 0.3rem 1.5rem;
+    /* padding: 0 1.5rem 0.3rem 1.5rem; */
     background-color: var(--main_bg_color_wt);
     display: none;
     flex-direction: column;
@@ -1001,6 +1051,7 @@ nav {
 .category-box:hover {
     background-color: rgb(227, 226, 226);
 }
+
 
 .overflowScrollBar {
     overflow-y: hidden;
@@ -1020,6 +1071,7 @@ nav {
     cursor: pointer;
     border-radius: 0.3rem;
     padding: 0 0.3rem;
+    padding: 0 1.5rem 0rem 1.5rem;
 }
 
 .category-input::before {
@@ -1078,6 +1130,41 @@ nav {
     flex-grow: 1;
 }
 
+.render-here {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #0cc1e1 94%, #ffffff00) top/8px 8px no-repeat,
+        conic-gradient(#0000 30%, #0cc1e1);
+    -webkit-mask: radial-gradient(farthest-side,
+            #a73d3d00 calc(100% - 7px),
+            #000 0);
+    mask: radial-gradient(farthest-side,
+            #a73d3d00 calc(100% - 7px),
+            #000 0);
+    ;
+    animation: s3 0.4s infinite linear;
+
+}
+
+@keyframes s3 {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
 .container-info {
     margin-bottom: 0.5rem;
     border-radius: 0.2rem;
@@ -1118,14 +1205,21 @@ nav {
     width: 100%;
     justify-content: start;
     align-items: center;
-    gap: 0 1.3rem;
     z-index: 1;
+}
+
+.small-section {
+    display: flex;
+    margin-right: 3rem;
+    flex-grow: 1;
+    width: 100%;
 }
 
 .span {
     font-size: 0.9rem;
     font-weight: 900;
     color: black;
+    margin-right: 0.3rem;
 }
 
 .right-section .title:hover {
@@ -1133,16 +1227,18 @@ nav {
 }
 
 .right-section .title .plus-icon {
-    color: rgb(104, 104, 104);
-    font-size: 1.3rem;
+    color: #2e4257;
+    font-size: 1.6rem;
     rotate: 0deg;
     transition: rotate 0.3s;
+    align-self: start;
+    opacity: 0.9;
 }
 
 .right-section .title .plus-icon.rotatePlusIcon {
-    rotate: 45deg;
+    rotate: 90deg;
     transition: rotate 0.3s;
-    color: rgb(19, 128, 147);
+    color: #009dff;
 }
 
 .right-section .description {
@@ -1170,6 +1266,8 @@ nav {
 .right-section .description.display {
     display: flex;
 }
+
+
 
 .right-section .description .seeMorelink,
 .right-section .description .seeMorelink:link,
@@ -1704,6 +1802,20 @@ nav {
         transform: rotate(-360deg) scale(1);
     }
 }
+
+@keyframes underline-hover {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+
+}
+
 
 @keyframes image_position {
     0% {
