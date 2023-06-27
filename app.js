@@ -12,7 +12,7 @@ const spn2 = document.querySelectorAll(".spn2");
 const navbar_box2ULLI = document.querySelectorAll(".navbar_box2 ul li");
 const opened_dropdown_bar = document.querySelectorAll(".opened_dropdown_bar");
 const closed_dropdown_bar_h1 = document.querySelectorAll(
-  ".closed_dropdown_bar h1"
+    ".closed_dropdown_bar h1"
 );
 const coursesNav_boxULLI = document.querySelectorAll(".coursesNav_box ul li");
 const courses_cards = document.querySelectorAll(".courses_image_box");
@@ -20,14 +20,14 @@ const counters = document.querySelectorAll(".counter");
 const contact_corner_box = document.querySelector(".contact_corner_box");
 const contact_corner_box_i = document.querySelector(".chat_open_btn");
 const contact_header_remove_btn = document.querySelector(
-  ".contact_header .contact_corner_box"
+    ".contact_header .contact_corner_box"
 );
 
 const message_box_remove_btn = document.querySelector(
-  ".message_box_remove_btn"
+    ".message_box_remove_btn"
 );
 const contact_corner_content = document.querySelector(
-  ".contact_corner_content"
+    ".contact_corner_content"
 );
 
 const chat_open_btn = document.querySelector(".chat_open_btn");
@@ -40,88 +40,94 @@ const beneficiaries = document.getElementById("beneficiaries");
 const categories = document.getElementById("categories");
 const locations = document.getElementById("locations");
 const mainContainerEl = document.querySelector(".main-container");
-const clearBtn = document.querySelector(".clearBtn");
+
+const news_filter_bottom_header_box = document.querySelector(
+    ".news_filter_bottom_header_box"
+);
+const news_filter_bottom_box_ul = document.querySelector(
+    ".news_filter_bottom_box ul"
+);
 
 let startIndex = 0;
 let endIndex = 30;
-//=====================  import data.js  ===========================
+//=====================import data.js===========================
 import data from "./data.js";
 
 //===========================FUNCTIONS-indexDB=============================
 function scrollFunc() {
-  navbarCont.classList.toggle("active", scrollY > 80);
-  navbar_box1_img.classList.toggle("active", scrollY > 80);
-  for (let i = 0; i < navbar_box2ULLI.length; i++) {
-    navbar_box2ULLI[i].classList.toggle("active", scrollY > 80);
-  }
-  // navbar_search_Input.classList.toggle("active", scrollY > 80);
+    navbarCont.classList.toggle("active", scrollY > 80);
+    navbar_box1_img.classList.toggle("active", scrollY > 80);
+    for (let i = 0; i < navbar_box2ULLI.length; i++) {
+        navbar_box2ULLI[i].classList.toggle("active", scrollY > 80);
+    }
+    navbar_search_Input.classList.toggle("active", scrollY > 80);
 }
 
 function NavsearchbaruClick() {
-  if (window.scrollY > 80) {
-    navbar_search_Input.classList.toggle("active1");
-    if (navbar_search_Input.value.trim() != 0) {
-      console.log(navbar_search_Input.value);
-      navbar_search_Input.value = "";
+    if (window.scrollY > 80) {
+        navbar_search_Input.classList.toggle("active1");
+        if (navbar_search_Input.value.trim() != 0) {
+            console.log(navbar_search_Input.value);
+            navbar_search_Input.value = "";
+        }
+    } else if (navbar_search_Input.value.trim() != 0) {
+        console.log(navbar_search_Input.value);
+        navbar_search_Input.value = "";
     }
-  } else if (navbar_search_Input.value.trim() != 0) {
-    console.log(navbar_search_Input.value);
-    navbar_search_Input.value = "";
-  }
 }
 
 function navbarMenuClick() {
-  document.querySelector(".responsive_navbar_box").classList.toggle("active");
-  navbar_menu.classList.toggle("active");
+    document.querySelector(".responsive_navbar_box").classList.toggle("active");
+    navbar_menu.classList.toggle("active");
 }
 
 for (let i = 0; i < closed_dropdown_bar.length; i++) {
-  closed_dropdown_bar[i].addEventListener("click", () => {
-    opened_dropdown_bar[i].classList.toggle("active");
-    closed_dropdown_bar_h1[i].classList.toggle("active");
-    spn2[i].classList.toggle("active");
-  });
+    closed_dropdown_bar[i].addEventListener("click", () => {
+        opened_dropdown_bar[i].classList.toggle("active");
+        closed_dropdown_bar_h1[i].classList.toggle("active");
+        spn2[i].classList.toggle("active");
+    });
 }
 
 navbar_box2ULLI.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    navbar_box2ULLI.forEach((tab) => {
-      tab.classList.remove("active");
-    });
+    tab.addEventListener("click", () => {
+        navbar_box2ULLI.forEach((tab) => {
+            tab.classList.remove("active");
+        });
 
-    tab.classList.add("active");
-  });
+        tab.classList.add("active");
+    });
 });
 
 coursesNav_boxULLI.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    //filter
-    const value = tab.textContent;
-    courses_cards.forEach((filteritems) => {
-      filteritems.classList.add("active");
-      if (
-        filteritems.getAttribute("value") == value.toLowerCase() ||
-        value == "Show All"
-      ) {
-        filteritems.classList.remove("active");
-      }
+    tab.addEventListener("click", () => {
+        //filter
+        const value = tab.textContent;
+        courses_cards.forEach((filteritems) => {
+            filteritems.classList.add("active");
+            if (
+                filteritems.getAttribute("value") == value.toLowerCase() ||
+                value == "Show All"
+            ) {
+                filteritems.classList.remove("active");
+            }
+        });
     });
-  });
 });
 
 //static counter
 let speed = 200;
 for (let i = 0; i < counters.length; i++) {
-  function staticTimer() {
-    const datasetnumber = +counters[i].dataset.target;
-    const currentnumber = +counters[i].innerText;
-    const incPercount = datasetnumber / speed;
-    if (currentnumber < datasetnumber) {
-      counters[i].innerText = Math.ceil(incPercount + currentnumber);
-      setTimeout(staticTimer, 60);
+    function staticTimer() {
+        const datasetnumber = +counters[i].dataset.target;
+        const currentnumber = +counters[i].innerText;
+        const incPercount = datasetnumber / speed;
+        if (currentnumber < datasetnumber) {
+            counters[i].innerText = Math.ceil(incPercount + currentnumber);
+            setTimeout(staticTimer, 60);
+        }
     }
-  }
-  staticTimer();
+    staticTimer();
 }
 /*
 //online contact btn
@@ -175,144 +181,180 @@ function messageKeybindBtn(e) {
 }
 */
 switch (Page) {
-  case "indexBD":
-    //===========================EVENTLISTENERS=============================
-    navbar_menu.addEventListener("click", navbarMenuClick);
-    // navbar_search_I.addEventListener("click", NavsearchbaruClick);
-    //contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
-    //message_box_remove_btn.addEventListener("click", contactBtnclickClose);
-    //send_msg_btn.addEventListener("click", messageclickBtn);
-    //contact_input.addEventListener("keyup", messageKeybindBtn);
-    window.addEventListener("scroll", scrollFunc);
+    case "indexBD":
+        //===========================EVENTLISTENERS=============================
 
-    //===========================sliders=============================
-    let slideIndex = 0;
-    showSlides();
+        navbar_menu.addEventListener("click", navbarMenuClick);
+        navbar_search_I.addEventListener("click", NavsearchbaruClick);
+        window.addEventListener("scroll", scrollFunc);
+        //contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
+        //message_box_remove_btn.addEventListener("click", contactBtnclickClose);
+        //send_msg_btn.addEventListener("click", messageclickBtn);
+        //contact_input.addEventListener("keyup", messageKeybindBtn);
+        //===========================sliders=============================
+        let slideIndex = 0;
+        showSlides();
 
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-        slides[i].style.opacity = "0";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      slides[slideIndex - 1].style.display = "block";
-      slides[slideIndex - 1].style.opacity = "1";
-      setTimeout(showSlides, 5000);
-    }
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].style.opacity = "0";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].style.opacity = "1";
+            setTimeout(showSlides, 5000);
+        }
+        break;
+    case "servicesBD":
+        //renderServices();
 
-    break;
+        //=========================== Variables After rendering =================
 
-  case "servicesBD":
-    //renderServices();
+        //===========================EVENTLISTENERS=============================
+        navbar_menu.addEventListener("click", navbarMenuClick);
+        navbar_search_I.addEventListener("click", NavsearchbaruClick);
+        window.addEventListener("scroll", scrollFunc);
+        categoryBox[0].addEventListener("click", beneficiariesClick);
+        categoryBox[1].addEventListener("click", categoryClicks);
+        categoryBox[2].addEventListener("click", locationsClicks);
 
-    //=========================== Variables After rendering =================
+        mainContainerEl.addEventListener("click", dropDownFunction);
 
-    //===========================EVENTLISTENERS=============================
-    navbar_menu.addEventListener("click", navbarMenuClick);
-    // navbar_search_I.addEventListener("click", NavsearchbaruClick);
-    window.addEventListener("scroll", scrollFunc);
-    categoryBox[0].addEventListener("click", beneficiariesClick);
-    categoryBox[1].addEventListener("click", categoryClicks);
-    categoryBox[2].addEventListener("click", locationsClicks);
+        // window.addEventListener("scroll", renderScroll);
+        // document.addEventListener("click", (e) => {
+        //     if (e.target.dataset.titlecontainer) {
+        //         dropDownFunction(e.target.dataset.titlecontainer);
+        //     }
+        // });
+        // contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
+        // message_box_remove_btn.addEventListener("click", contactBtnclickClose);
+        // send_msg_btn.addEventListener("click", messageclickBtn);
+        // contact_input.addEventListener("keyup", messageKeybindBtn);
+        // document.addEventListener("DOMContentLoaded", filterFunction);
 
-    mainContainerEl.addEventListener("click", dropDownFunction);
+        break;
 
-    //clearBtn.addEventListener("click", clearFunction);
-    // window.addEventListener("scroll", renderScroll);
-    // document.addEventListener("click", (e) => {
-    //     if (e.target.dataset.titlecontainer) {
-    //         dropDownFunction(e.target.dataset.titlecontainer);
-    //     }
-    // });
-    // contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
-    // message_box_remove_btn.addEventListener("click", contactBtnclickClose);
-    // send_msg_btn.addEventListener("click", messageclickBtn);
-    // contact_input.addEventListener("keyup", messageKeybindBtn);
-    // document.addEventListener("DOMContentLoaded", filterFunction);
+    case "contactBD":
+        //===========================EVENTLISTENERS=============================
+        navbar_menu.addEventListener("click", navbarMenuClick);
+        navbar_search_I.addEventListener("click", NavsearchbaruClick);
+        window.addEventListener("scroll", scrollFunc);
+        // contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
+        // message_box_remove_btn.addEventListener("click", contactBtnclickClose);
+        // send_msg_btn.addEventListener("click", messageclickBtn);
+        // contact_input.addEventListener("keyup", messageKeybindBtn);
 
-    break;
+        break;
 
-  case "contactBD":
-    //===========================EVENTLISTENERS=============================
-    navbar_menu.addEventListener("click", navbarMenuClick);
-    // navbar_search_I.addEventListener("click", NavsearchbaruClick);
-    window.addEventListener("scroll", scrollFunc);
-    checkboxes.forEach((checkbox) =>
-      checkbox.addEventListener("change", handleCheckboxChange)
-    );
+    case "newsDB":
+        navbar_menu.addEventListener("click", navbarMenuClick);
+        navbar_search_I.addEventListener("click", NavsearchbaruClick);
+        window.addEventListener("scroll", scrollFunc);
+        window.addEventListener("resize", handleResize);
+        function toggleFilter() {
+            news_filter_bottom_header_box.classList.toggle("active");
+            news_filter_bottom_box_ul.classList.toggle("active");
+        }
 
-    // contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
-    // message_box_remove_btn.addEventListener("click", contactBtnclickClose);
-    // send_msg_btn.addEventListener("click", messageclickBtn);
-    // contact_input.addEventListener("keyup", messageKeybindBtn);
+        function addClickListener() {
+            news_filter_bottom_header_box.addEventListener(
+                "click",
+                toggleFilter
+            );
+        }
 
-    break;
+        function removeClickListener() {
+            news_filter_bottom_header_box.removeEventListener(
+                "click",
+                toggleFilter
+            );
+        }
+
+        var windowWidth = window.innerWidth;
+
+        function handleResize() {
+            var newWindowWidth = window.innerWidth;
+
+            if (newWindowWidth <= 1200 && windowWidth > 1200) {
+                addClickListener();
+                news_filter_bottom_header_box.classList.add("active");
+                news_filter_bottom_box_ul.classList.add("active");
+            } else if (newWindowWidth > 1200 && windowWidth <= 1200) {
+                removeClickListener();
+                news_filter_bottom_box_ul.classList.remove("active");
+            }
+
+            windowWidth = newWindowWidth;
+        }
+
+        break;
 }
 
 //============================Functions for "servicesBD" ======
 
 function beneficiariesClick() {
-  beneficiaries.classList.toggle("display");
-  document.querySelector(".benef").classList.toggle("rotate");
-  containerHeight(beneficiaries);
+    beneficiaries.classList.toggle("display");
+    document.querySelector(".benef").classList.toggle("rotate");
+    containerHeight(beneficiaries);
 }
 function categoryClicks() {
-  categories.classList.toggle("display");
-  document.querySelector(".category").classList.toggle("rotate");
-  containerHeight(categories);
+    categories.classList.toggle("display");
+    document.querySelector(".category").classList.toggle("rotate");
+    containerHeight(categories);
 }
 function locationsClicks() {
-  locations.classList.toggle("display");
-  document.querySelector(".locations").classList.toggle("rotate");
-  containerHeight(locations);
+    locations.classList.toggle("display");
+    document.querySelector(".locations").classList.toggle("rotate");
+    containerHeight(locations);
 }
 
 function containerHeight(categoriesContainer) {
-  let containerHeight = 0;
-  for (let i = 0; i < categoryInputContainer.length; i++) {
-    containerHeight += categoryInputContainer[i].offsetHeight;
-  }
-  if (containerHeight > 300) {
-    categoriesContainer.classList.remove("overflowScrollBar");
-  } else {
-    categoriesContainer.classList.add("overflowScrollBar");
-  }
+    let containerHeight = 0;
+    for (let i = 0; i < categoryInputContainer.length; i++) {
+        containerHeight += categoryInputContainer[i].offsetHeight;
+    }
+    if (containerHeight > 300) {
+        categoriesContainer.classList.remove("overflowScrollBar");
+    } else {
+        categoriesContainer.classList.add("overflowScrollBar");
+    }
 }
 
 function dropDownFunction(e) {
-  if (
-    e.target.classList.contains("title") ||
-    e.target.classList.contains("plus-icon") ||
-    e.target.classList.contains("main-info") ||
-    e.target.classList.contains("more-info") ||
-    e.target.classList.contains("title-text") ||
-    e.target.classList.contains("span") ||
-    e.target.classList.contains("small-section")
-  ) {
-    const dataValue = e.target.dataset.titlecontainer;
-    document.getElementById(`${dataValue}`).classList.toggle("display");
-    document
-      .getElementById(`icon-${dataValue}`)
-      .classList.toggle("rotatePlusIcon");
-  }
+    if (
+        e.target.classList.contains("title") ||
+        e.target.classList.contains("plus-icon") ||
+        e.target.classList.contains("main-info") ||
+        e.target.classList.contains("more-info") ||
+        e.target.classList.contains("title-text") ||
+        e.target.classList.contains("span") ||
+        e.target.classList.contains("small-section")
+    ) {
+        const dataValue = e.target.dataset.titlecontainer;
+        document.getElementById(`${dataValue}`).classList.toggle("display");
+        document
+            .getElementById(`icon-${dataValue}`)
+            .classList.toggle("rotatePlusIcon");
+    }
 }
 
 function feedServiceTabs() {
-  let maxIndex = startIndex + (endIndex - startIndex);
-  if (data.length < maxIndex) {
-    maxIndex = data.length;
-  }
-  for (let i = startIndex; i < maxIndex; i++) {
-    if (data.length >= maxIndex) {
-      let dataInfo = data[i];
-      let containerInfoDiv = document.createElement("div");
-      containerInfoDiv.classList.add("container-info");
-      containerInfoDiv.innerHTML = `<div class="title" data-titlecontainer="${dataInfo.id}">
+    let maxIndex = startIndex + (endIndex - startIndex);
+    if (data.length < maxIndex) {
+        maxIndex = data.length;
+    }
+    for (let i = startIndex; i < maxIndex; i++) {
+        if (data.length >= maxIndex) {
+            let dataInfo = data[i];
+            let containerInfoDiv = document.createElement("div");
+            containerInfoDiv.classList.add("container-info");
+            containerInfoDiv.innerHTML = `<div class="title" data-titlecontainer="${dataInfo.id}">
                                             <div class="main-info" data-titlecontainer="${dataInfo.id}">
                                             <span data-titlecontainer="${dataInfo.id}">${dataInfo.title}</span>
                                             <span class="more-info" data-titlecontainer="${dataInfo.id}"><div data-titlecontainer="${dataInfo.id}"><span class="span" data-titlecontainer="${dataInfo.id}">კატეგორია:</span> ${dataInfo.categories}</div><div data-titlecontainer="${dataInfo.id}"> <span class="span" data-titlecontainer="${dataInfo.id}">ლოკაცია:</span> ${dataInfo.location}</span></div>
@@ -331,11 +373,11 @@ function feedServiceTabs() {
                                               alt="დეტალურად ნახვა"
                                               >დეტალურად</a>
                                          </div>`;
-      document.querySelector(".render-here").append(containerInfoDiv);
+            document.querySelector(".render-here").append(containerInfoDiv);
+        }
     }
-  }
-  startIndex = endIndex;
-  endIndex += endIndex + 30;
+    startIndex = endIndex;
+    endIndex += endIndex + 30;
 }
 /*=========== COMMENTED FUNCTIONS============================ */
 // function renderServices() {
@@ -394,4 +436,4 @@ function feedServiceTabs() {
 //     }
 // }
 
-//===============Functions for "contactBD" ==================
+//===============Functions for "newsDB" ==================
