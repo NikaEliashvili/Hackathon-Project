@@ -3,6 +3,7 @@ include './php/config.php';
 require_once("./php/getFiltersCategories.php");
 require_once("./php/getPosts.php");
 include './php/filter.php';
+header('Content-Type: text/html; charset=utf-8');
 session_start();
 if (!$conn) {
   die('Connection failed: ' . mysqli_connect_error());
@@ -87,12 +88,12 @@ if (!$conn) {
           <li>
             <a href="contact.php">კონტაქტები</a>
           </li>
-          <li>
+          <!-- <li>
             <div class="navbar_search_box">
               <input class="navbarsearch_input" type="text" placeholder="ძებნა..." />
               <i class="fa fa-search"></i>
             </div>
-          </li>
+          </li> -->
           <div class="navbar_menu">
             <span class="line1"></span>
             <span class="line2"></span>
@@ -122,41 +123,23 @@ if (!$conn) {
   <!--===========================filter=============================-->
   <section class="main-container">
     <div class="left-section">
-      <form action="" method="GET" id="filterForm">
-        <div class="buttons-container">
-          <!-- <button type="button" id="submitBtn">Submit</button> -->
-          <button type="button" class="clearBtn" id="clearBtn" name="clearBtn">
-            <!-- <span> გასუფთავება </span> -->
-
-            <svg class="cleaning-icon" version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-
-              <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" stroke="none">
-                <path d="M4382 5100 c-88 -23 -177 -69 -239 -124 -26 -23 -272 -311 -546 -641
--275 -330 -509 -610 -520 -622 l-19 -22 68 -34 c208 -106 400 -294 531 -519
-41 -70 48 -77 62 -65 9 8 286 239 616 514 330 274 621 523 647 553 91 104 138
-235 138 383 0 165 -56 303 -170 418 -150 152 -365 212 -568 159z" />
-                <path d="M2330 3499 c-155 -18 -336 -85 -468 -173 -37 -24 -134 -104 -217
--176 -619 -545 -1121 -839 -1589 -930 l-59 -12 6 -107 c11 -174 50 -359 101
--475 14 -31 32 -59 40 -62 40 -15 355 52 455 97 35 16 66 29 68 29 6 0 -70
--89 -224 -262 -68 -76 -123 -144 -123 -151 0 -18 164 -201 229 -256 l52 -43
-104 50 c206 100 447 260 645 427 88 74 93 77 71 40 -70 -115 -362 -581 -411
--655 -80 -120 -78 -117 -39 -93 284 173 502 313 627 405 28 21 52 36 52 34 0
--3 -12 -22 -26 -43 -42 -61 -93 -168 -149 -313 -46 -118 -115 -322 -115 -341
-0 -7 95 -48 283 -119 136 -51 138 -52 190 -40 281 67 719 477 1216 1140 381
-508 457 662 468 948 6 148 -5 244 -43 361 -130 395 -476 673 -897 720 -107 12
--139 12 -247 0z" />
-                <path d="M3293 939 c-57 -28 -83 -72 -83 -139 0 -67 27 -112 84 -139 54 -26
-88 -26 142 0 57 27 84 72 84 139 0 67 -27 112 -84 139 -54 26 -90 26 -143 0z" />
-                <path d="M3755 627 c-56 -19 -81 -33 -127 -75 -98 -88 -127 -245 -70 -367 33
--68 92 -127 161 -158 65 -30 187 -30 252 0 164 75 236 268 161 428 -33 69 -93
-128 -161 158 -56 25 -162 32 -216 14z" />
-                <path d="M2653 299 c-57 -28 -83 -72 -83 -139 0 -67 27 -112 84 -139 54 -26
-88 -26 142 0 57 27 84 72 84 139 0 67 -27 112 -84 139 -54 26 -90 26 -143 0z" />
-              </g>
-            </svg>
-
+      <form action="" method="GET" id="searchForm">
+        <div class="navbar_search_box">
+          <input id="searchBar" class="navbarsearch_input" type="text" name="searchBar" placeholder="ძებნა..." />
+          <button type="submit" id="searchIcon">
+            <i class="fa fa-search"></i>
           </button>
         </div>
+      </form>
+      <form action="" method="GET" id="filterForm">
+        <!-- <div class="buttons-container"> 
+           <button type="button" id="submitBtn">Submit</button> -->
+        <!-- <button type="button" class="clearBtn" id="clearBtn" name="clearBtn"> -->
+        <!-- <span> გასუფთავება </span> -->
+        <!-- ===== icon here ===== -->
+        <!-- </button> -->
+        <!-- </div> -->
+        <!-- <div class="search-bar"></div> -->
         <div class="category-form">
           <div class="category-box">
             ბენეფიციარები <span class="benef arrow"></span>
@@ -178,8 +161,6 @@ if (!$conn) {
             <?php
             getFiltersCategories($conn, 'categories');
             ?>
-
-
           </div>
         </div>
         <div class="category-form">
@@ -197,6 +178,7 @@ if (!$conn) {
       </form>
     </div>
     <div class="right-section">
+      <button class="clearbtn" onclick="location.href='<?php echo $_SERVER['PHP_SELF']; ?>'"><a href="<?php echo $_SERVER['PHP_SELF']; ?>">ფილტრის გასუფთავება</a><img src="./img/data-cleaning.svg" class="cleaning-icon" /></button>
       <div class="render-here">
         <?php
         getMainPosts($conn);
@@ -312,20 +294,26 @@ if (!$conn) {
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(function() {
-
+      var allCheckboxes = document.querySelectorAll('input[type="checkbox"]')
       // Submit button click event
       $('#submitBtn').click(function() {
         submitForm();
       });
 
-      // Clear button click event
-      $('#clearBtn').click(function() {
-        clearForm();
-      });
-
       // Checkbox change event
       $('#filterForm input[type="checkbox"]').change(function() {
         submitForm();
+      });
+
+
+      $('#searchBar').keyup((e) => {
+        if (e.keyCode === 13) {
+          searchForm();
+        }
+      });
+
+      $('#searchIcon').click(function(e) {
+        searchForm();
       });
 
       // Function to submit the form via AJAX
@@ -334,11 +322,12 @@ if (!$conn) {
         // Show loading animation
         $('.render-here').html('<div class="loading"></div>');
 
-        // Delay for minimum duration
-        var delayTimer = setTimeout(function() {
+        // Send AJAX request after a small delay
+        setTimeout(function() {
           $.ajax({
-            url: 'services.php?' + formData, // Append form data to the URL
+            url: 'services.php',
             type: 'GET',
+            data: formData, // Pass form data as AJAX parameters
             success: function(response) {
               var updatedContent = $(response).find('.render-here').html();
               $('.render-here').html(updatedContent); // Update the specific content
@@ -349,9 +338,35 @@ if (!$conn) {
           });
         }, 300);
 
-        // Clear the timeout if the form is submitted again
-        // clearTimeout(delayTimer);
       }
+
+      function searchForm(event) {
+
+        var searchForm = $('#searchForm').serialize();
+        $('.render-here').html('<div class="loading"></div>');
+
+        // Send AJAX request
+        setTimeout(function(e) {
+          event.preventDefault();
+          $.ajax({
+            url: 'services.php',
+            type: 'GET',
+            data: searchForm, // Pass form data as AJAX parameters
+            success: function(response) {
+              var updatedContent = $(response).find('.render-here').html();
+              $('.render-here').html(updatedContent); // Update the specific content
+            },
+            error: function(xhr, status, error) {
+              console.error(xhr.responseText); // Log any error messages
+            }
+          });
+        }, 300);
+
+
+
+      }
+
+
 
       // Function to clear the form
       function clearForm() {
@@ -362,10 +377,6 @@ if (!$conn) {
 
 
 
-
-      // Clear button click event
-      // $('#clearBtn').click(function() {
-      //   $('#filterForm input[type="checkbox"]').prop('checked', false);
       //   $('#filterForm').submit();
       // });
       // // Checkbox change event
@@ -378,27 +389,51 @@ if (!$conn) {
     var beneficiariesCheckboxes = document.querySelectorAll('input[name="filterBen[]"]');
 
 
-    beneficiariesCheckboxes.forEach((checkbox) => {
-      if (document.getElementById('locations').classList != 'display' && checkbox.checked) {
-        document.getElementById('beneficiaries').classList.add('display')
-        document.querySelector(".benef").classList.toggle("rotate");
+    // beneficiariesCheckboxes.forEach((checkbox) => {
+    //   if (document.getElementById('locations').classList != 'display' && checkbox.checked) {
+    //     document.getElementById('beneficiaries').classList.add('display')
+    //     document.querySelector(".benef").classList.toggle("rotate");
 
-      }
-    })
-    categoriesCheckboxes.forEach((checkbox) => {
-      if (document.getElementById('locations').classList != 'display' && checkbox.checked) {
-        document.getElementById('categories').classList.add('display')
-        document.querySelector(".category").classList.toggle("rotate");
+    //   }
+    // });
+    // categoriesCheckboxes.forEach((checkbox) => {
+    //   if (document.getElementById('locations').classList != 'display' && checkbox.checked) {
+    //     document.getElementById('categories').classList.add('display')
+    //     document.querySelector(".category").classList.toggle("rotate");
 
-      }
-    })
-    locationCheckboxes.forEach((checkbox) => {
-      if (document.getElementById('locations').classList != 'display' && checkbox.checked) {
-        document.getElementById('locations').classList.add('display')
-        document.querySelector(".locations").classList.toggle("rotate");
+    //   }
+    // });
+    // locationCheckboxes.forEach((checkbox) => {
+    //   if (document.getElementById('locations').classList != 'display' && checkbox.checked) {
+    //     document.getElementById('locations').classList.add('display')
+    //     document.querySelector(".locations").classList.toggle("rotate");
 
-      }
-    })
+    //   }
+    // });
+
+    // allCheckboxes.forEach((checkbox) => {
+    //   if (!checkbox.checked) {
+    //     console.log("checked!!!!!")
+    //   }
+    // })
+
+    // Find all Facebook share buttons
+    var facebookShareButtons = document.querySelectorAll('.facebook-share-button');
+
+    // Attach click event listener to each button
+    facebookShareButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var postId = this.getAttribute('data-postid');
+        var postUrl = window.location.href + '?post=' + postId;
+
+        // Encode the post URL
+        var encodedUrl = encodeURIComponent(postUrl);
+
+        // Open Facebook share dialog with the encoded post URL
+        var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
+        window.open(shareUrl, '_blank');
+      });
+    });
   </script>
 
 

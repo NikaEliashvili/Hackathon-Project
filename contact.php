@@ -70,12 +70,12 @@
                     <li>
                         <a href="contact.php">კონტაქტები</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <div class="navbar_search_box">
                             <input class="navbarsearch_input" type="text" placeholder="ძებნა..." />
                             <i class="fa fa-search"></i>
                         </div>
-                    </li>
+                    </li> -->
                     <div class="navbar_menu">
                         <span class="line1"></span>
                         <span class="line2"></span>

@@ -40,16 +40,7 @@ const beneficiaries = document.getElementById("beneficiaries");
 const categories = document.getElementById("categories");
 const locations = document.getElementById("locations");
 const mainContainerEl = document.querySelector(".main-container");
-const clearBtn = document.getElementById("clearBtn");
-const locationCheckboxes = document.querySelectorAll(
-  'input[name="filterLoc[]"]'
-);
-const categoriesCheckboxes = document.querySelectorAll(
-  'input[name="filterCat[]"]'
-);
-const beneficiariesCheckboxes = document.querySelectorAll(
-  'input[name="filterBen[]"]'
-);
+const clearBtn = document.querySelector(".clearBtn");
 
 let startIndex = 0;
 let endIndex = 30;
@@ -63,7 +54,7 @@ function scrollFunc() {
   for (let i = 0; i < navbar_box2ULLI.length; i++) {
     navbar_box2ULLI[i].classList.toggle("active", scrollY > 80);
   }
-  navbar_search_Input.classList.toggle("active", scrollY > 80);
+  // navbar_search_Input.classList.toggle("active", scrollY > 80);
 }
 
 function NavsearchbaruClick() {
@@ -187,7 +178,7 @@ switch (Page) {
   case "indexBD":
     //===========================EVENTLISTENERS=============================
     navbar_menu.addEventListener("click", navbarMenuClick);
-    navbar_search_I.addEventListener("click", NavsearchbaruClick);
+    // navbar_search_I.addEventListener("click", NavsearchbaruClick);
     //contact_corner_box_i.addEventListener("click", contactBtnclickOpen);
     //message_box_remove_btn.addEventListener("click", contactBtnclickClose);
     //send_msg_btn.addEventListener("click", messageclickBtn);
@@ -223,13 +214,14 @@ switch (Page) {
 
     //===========================EVENTLISTENERS=============================
     navbar_menu.addEventListener("click", navbarMenuClick);
-    navbar_search_I.addEventListener("click", NavsearchbaruClick);
+    // navbar_search_I.addEventListener("click", NavsearchbaruClick);
     window.addEventListener("scroll", scrollFunc);
     categoryBox[0].addEventListener("click", beneficiariesClick);
     categoryBox[1].addEventListener("click", categoryClicks);
     categoryBox[2].addEventListener("click", locationsClicks);
 
     mainContainerEl.addEventListener("click", dropDownFunction);
+
     //clearBtn.addEventListener("click", clearFunction);
     // window.addEventListener("scroll", renderScroll);
     // document.addEventListener("click", (e) => {
@@ -248,7 +240,7 @@ switch (Page) {
   case "contactBD":
     //===========================EVENTLISTENERS=============================
     navbar_menu.addEventListener("click", navbarMenuClick);
-    navbar_search_I.addEventListener("click", NavsearchbaruClick);
+    // navbar_search_I.addEventListener("click", NavsearchbaruClick);
     window.addEventListener("scroll", scrollFunc);
     checkboxes.forEach((checkbox) =>
       checkbox.addEventListener("change", handleCheckboxChange)

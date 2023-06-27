@@ -28,7 +28,7 @@ function getFiltersCategories($conn, $name)
     $checked = [];
     // if (isset($_GET['clearBtn'])) {
     //     unset($_SESSION['checkedFilters']);
-    //     // header("Location: " . $_SERVER['PHP_SELF']);
+    // header("Location: " . $_SERVER['PHP_SELF']);
     // }
     if ($_SERVER['REQUEST_METHOD'] === 'GET' || (isset($_GET['filterBen']) || isset($_GET['filterCat']) || isset($_GET['filterLoc']))) {
         if (isset($_GET['filterBen'])) {
@@ -46,7 +46,7 @@ function getFiltersCategories($conn, $name)
     } else {
         // If the form is not submitted, clear the filters by unsetting the session variable
         unset($_SESSION['checkedFilters']);
-        header("Location: " . $_SERVER['PHP_SELF']);
+        // header("Location: " . $_SERVER['PHP_SELF']);
     }
     sort($categories, SORT_LOCALE_STRING); // Sort the category values in Georgian alphabet order
 
