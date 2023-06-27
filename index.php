@@ -16,9 +16,15 @@
     <link rel="stylesheet" href="bpg-nateli-master/css/bpg-nateli.min.css" />
 
     <script src="swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js">
 </head>
 
 <body id="indexBD">
+        <!--===========================LOADER=============================-->
+    <div class="loader"
+        style="width: 100%; height: 100vh; background-color:var(--main_bg_color_wt); position: absolute; top: 0; left: 0; z-index: 1000;">
+        <div class="custom-loader"></div>
+    </div>
     <!--===========================navbar=============================-->
     <section class="navbar_container">
         <nav>
@@ -35,7 +41,7 @@
                         <a href="services.php">სერვისები</a>
                     </li>
                     <li>
-                        <a href="#about_container">ჩვენ შესახებ</a>
+                        <a href="news_php/news.php">ახალი ამბები</a>
                     </li>
                     <li onclick="location.href='contact.php'">
                         <a href="contact.php">კონტაქტები</a>
@@ -63,7 +69,7 @@
                     <a href="services.php">სერვისები</a>
                 </li>
                 <li>
-                    <a href="#">ჩვენ შესახებ</a>
+                    <a href="news_php/news.php">ახალი ამბები</a>
                 </li>
                 <li onclick="location.href='contact.php'">
                     <a href="contact.php">კონტაქტები</a>
@@ -105,6 +111,7 @@
          -->
     <!--===========================slider=============================-->
     <section class="banner_content swiper mySwiper">
+             <h1>მეტი განვითარება ახალგაზრდებს!</h1>
         <div class="mySlides fade">
             <img src="img/automainslider_img1.jpg" />
         </div>
@@ -247,29 +254,34 @@
     </section>
     <!--===========================statistic=============================-->
     <section class="static_container">
+        <img src="./img/statisticbanner_img.jpg" alt="">
         <div class="static_box">
             <div class="static_row">
                 <div class="static_row_box">
-                    <h2 class="counter" data-target="18774">0</h2>
-                    <p>შემოსავლები</p>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h2 class="counter" data-target="97768">0</h2>
+                    <p>სტუდენტი</p>
                 </div>
             </div>
             <div class="static_row">
                 <div class="static_row_box">
-                    <h2 class="counter" data-target="342">0</h2>
-                    <p>გრანტები</p>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <h2 class="counter" data-target="6550">0</h2>
+                    <p>გრანტი</p>
                 </div>
             </div>
             <div class="static_row">
                 <div class="static_row_box">
+                    <i class="fa-solid fa-graduation-cap"></i>
                     <h2 class="counter" data-target="17641">0</h2>
-                    <p>გადასახადები</p>
+                    <p>გადასახადი</p>
                 </div>
             </div>
             <div class="static_row">
                 <div class="static_row_box">
-                    <h2 class="counter" data-target="644">0</h2>
-                    <p>სოც უზრუნველყოფა</p>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h2 class="counter" data-target="64234">0</h2>
+                    <p>უზრუნველყოფა</p>
                 </div>
             </div>
         </div>
