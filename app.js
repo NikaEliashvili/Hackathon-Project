@@ -41,6 +41,13 @@ const categories = document.getElementById("categories");
 const locations = document.getElementById("locations");
 const mainContainerEl = document.querySelector(".main-container");
 const clearBtn = document.querySelector(".clearBtn");
+const news_filter_bottom_header_box = document.querySelector(
+    ".news_filter_bottom_header_box"
+);
+const news_filter_bottom_box_ul = document.querySelector(
+    ".news_filter_bottom_box ul"
+);
+
 
 let startIndex = 0;
 let endIndex = 30;
@@ -252,6 +259,49 @@ switch (Page) {
     // contact_input.addEventListener("keyup", messageKeybindBtn);
 
     break;
+
+     case "newsDB":
+        navbar_menu.addEventListener("click", navbarMenuClick);
+        navbar_search_I.addEventListener("click", NavsearchbaruClick);
+        window.addEventListener("scroll", scrollFunc);
+        window.addEventListener("resize", handleResize);
+        function toggleFilter() {
+            news_filter_bottom_header_box.classList.toggle("active");
+            news_filter_bottom_box_ul.classList.toggle("active");
+        }
+
+        function addClickListener() {
+            news_filter_bottom_header_box.addEventListener(
+                "click",
+                toggleFilter
+            );
+        }
+
+        function removeClickListener() {
+            news_filter_bottom_header_box.removeEventListener(
+                "click",
+                toggleFilter
+            );
+        }
+
+        var windowWidth = window.innerWidth;
+
+        function handleResize() {
+            var newWindowWidth = window.innerWidth;
+
+            if (newWindowWidth <= 1200 && windowWidth > 1200) {
+                addClickListener();
+                news_filter_bottom_header_box.classList.add("active");
+                news_filter_bottom_box_ul.classList.add("active");
+            } else if (newWindowWidth > 1200 && windowWidth <= 1200) {
+                removeClickListener();
+                news_filter_bottom_box_ul.classList.remove("active");
+            }
+
+            windowWidth = newWindowWidth;
+        }
+
+        break;
 }
 
 //============================Functions for "servicesBD" ======
@@ -393,5 +443,9 @@ function feedServiceTabs() {
 //         console.log(findObjects);
 //     }
 // }
+//===============Functions for "newsDB" ==================
+
+
+
 
 //===============Functions for "contactBD" ==================
