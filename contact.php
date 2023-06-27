@@ -1,3 +1,6 @@
+<?php
+include "contact_php/send_email.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +18,14 @@
 <link rel="stylesheet" href="swiper-bundle.min.css" />
 <link rel="icon" href="img/Social Services Logo (middle).png" />
 <link rel="stylesheet" href="bpg-nateli-master/css/bpg-nateli.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
 <body id="contactBD">
+    <!--===========================LOADER=============================-->
+    <div class="loader"
+        style="width: 100%; height: 100vh; background-color:var(--main_bg_color_wt); position: absolute; top: 0; left: 0; z-index: 1000;">
+        <div class="custom-loader"></div>
+    </div>
     <!--===========================online-contact=============================-->
     <!-- 
         <div class="contact_corner_box">
@@ -65,17 +74,17 @@
                         <a href="services.php">სერვისები</a>
                     </li>
                     <li>
-                        <a href="#">ჩვენ შესახებ</a>
+                        <a href="news_php/news.php">ახალი ამბები</a>
                     </li>
                     <li>
                         <a href="contact.php">კონტაქტები</a>
                     </li>
-                    <!-- <li>
+                    <li>
                         <div class="navbar_search_box">
                             <input class="navbarsearch_input" type="text" placeholder="ძებნა..." />
                             <i class="fa fa-search"></i>
                         </div>
-                    </li> -->
+                    </li>
                     <div class="navbar_menu">
                         <span class="line1"></span>
                         <span class="line2"></span>
@@ -93,7 +102,7 @@
                     <a href="services.php">სერვისები</a>
                 </li>
                 <li>
-                    <a href="#">ჩვენ შესახებ</a>
+                    <a href="news_php/news.php">ახალი ამბები</a>
                 </li>
                 <li>
                     <a href="#">კონტაქტები</a>
@@ -108,14 +117,15 @@
         <div class="contact_content">
             <div class="contact_left_column">
                 <h1>კონტაქტი</h1>
-                <form method="post">
-                    <input type="name" placeholder="შეიყვანეთ სახელი" />
-                    <input type="email" placeholder="mail მისამართი" />
-                    <input type="text" placeholder="რა სახის მესიჯია" />
-
-                    <textarea cols="30" rows="10" placeholder="დაწვრილებით...."></textarea>
-
-                    <button>დაეთანხმე</button>
+                <!-- <p class="success-message">
+                 
+                </p> -->
+                <form method="POST" action="contact_php/send_email.php">
+                    <input name="name" type="name" placeholder="შეიყვანეთ სახელი" />
+                    <input name="email" type="email" placeholder="mail მისამართი" />
+                    <input name="type" type="text" placeholder="რა სახის მესიჯია" />
+                    <textarea name="message" cols="30" rows="10" placeholder="დაწვრილებით...."></textarea>
+                    <button type="submit" name="submit">დაეთანხმე</button>
                 </form>
             </div>
             <div class="contact_right_column">
@@ -136,7 +146,7 @@
             </div>
         </div>
     </section>
-
+    <br>
     <!--===========================footer=============================-->
     <section class="footer_container ftr">
         <div class="footer_content">
@@ -177,6 +187,14 @@
         </div>
     </section>
     <script src="app.js" type="module" defer></script>
+    <script>
+    $(window).on("load", function() {
+        $(".loader").fadeOut(1000);
+        $("#servicesBD").fadeIn(1000);
+    });
+    </script>
+
+
 </body>
 
 </html>
